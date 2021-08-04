@@ -1,0 +1,1483 @@
+[
+    {
+        "spellName": "Fenrik's Door Jam",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 0,
+        "index": 1,
+        "icon": 1,
+        "effects": [
+            {
+                "type": 16,
+                "subType": -1,
+                "chanceBase": 50,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Buoyancy",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 0,
+        "index": 2,
+        "icon": 44,
+        "effects": [
+            {
+                "type": 31,
+                "subType": -1,
+                "durationBase": 5,
+                "durationMod": 0,
+                "durationPerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Frostbite",
+        "element": 1,
+        "rangeType": 1,
+        "cost": 0,
+        "index": 3,
+        "icon": 56,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 8,
+                "magnitudeBaseHigh": 14,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Levitate",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 50,
+        "index": 4,
+        "icon": 43,
+        "effects": [
+            {
+                "type": 14,
+                "subType": -1,
+                "durationBase": 5,
+                "durationMod": 0,
+                "durationPerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Light",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 150,
+        "index": 5,
+        "icon": 60,
+        "effects": [
+            {
+                "type": 15,
+                "subType": -1,
+                "durationBase": 15,
+                "durationMod": 0,
+                "durationPerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Invisibility",
+        "element": 4,
+        "rangeType": 1,
+        "cost": 145,
+        "index": 6,
+        "icon": 62,
+        "effects": [
+            {
+                "type": 13,
+                "subType": 0,
+                "durationBase": 5,
+                "durationMod": 0,
+                "durationPerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Wizard's Fire",
+        "element": 0,
+        "rangeType": 2,
+        "cost": 125,
+        "index": 7,
+        "icon": 58,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 20,
+                "magnitudeBaseHigh": 35,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Shock",
+        "element": 3,
+        "rangeType": 1,
+        "cost": 225,
+        "index": 8,
+        "icon": 51,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 25,
+                "magnitudeBaseHigh": 35,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Strength Leech",
+        "element": 4,
+        "rangeType": 1,
+        "cost": 245,
+        "index": 9,
+        "icon": 34,
+        "effects": [
+            {
+                "type": 7,
+                "subType": 0,
+                "magnitudeBaseLow": 9,
+                "magnitudeBaseHigh": 17,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Free Action",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 260,
+        "index": 10,
+        "icon": 28,
+        "effects": [
+            {
+                "type": 26,
+                "subType": -1,
+                "durationBase": 3,
+                "durationMod": 0,
+                "durationPerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Resist Cold",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 350,
+        "index": 11,
+        "icon": 11,
+        "effects": [
+            {
+                "type": 8,
+                "subType": 1,
+                "durationBase": 5,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "chanceBase": 25,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Resist Fire",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 350,
+        "index": 12,
+        "icon": 14,
+        "effects": [
+            {
+                "type": 8,
+                "subType": 0,
+                "durationBase": 5,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "chanceBase": 25,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Resist Shock",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 350,
+        "index": 13,
+        "icon": 12,
+        "effects": [
+            {
+                "type": 8,
+                "subType": 3,
+                "durationBase": 5,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "chanceBase": 25,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Fireball",
+        "element": 0,
+        "rangeType": 4,
+        "cost": 130,
+        "index": 14,
+        "icon": 22,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 25,
+                "magnitudeBaseHigh": 42,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Cure Poison",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 400,
+        "index": 15,
+        "icon": 7,
+        "effects": [
+            {
+                "type": 3,
+                "subType": 1,
+                "chanceBase": 60,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Ice Bolt",
+        "element": 1,
+        "rangeType": 2,
+        "cost": 245,
+        "index": 16,
+        "icon": 56,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 34,
+                "magnitudeBaseHigh": 50,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Shield",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 400,
+        "index": 17,
+        "icon": 10,
+        "effects": [
+            {
+                "type": 35,
+                "subType": -1,
+                "durationBase": 15,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "magnitudeBaseLow": 15,
+                "magnitudeBaseHigh": 25,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Open",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 300,
+        "index": 18,
+        "icon": 2,
+        "effects": [
+            {
+                "type": 17,
+                "subType": -1,
+                "chanceBase": 35,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Wizard Lock",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 480,
+        "index": 19,
+        "icon": 1,
+        "effects": [
+            {
+                "type": 16,
+                "subType": -1,
+                "chanceBase": 100,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Ice Storm",
+        "element": 1,
+        "rangeType": 4,
+        "cost": 195,
+        "index": 20,
+        "icon": 56,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 29,
+                "magnitudeBaseHigh": 50,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Spell Shield",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 660,
+        "index": 22,
+        "icon": 9,
+        "effects": [
+            {
+                "type": 22,
+                "subType": -1,
+                "durationBase": 3,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "chanceBase": 25,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Silence",
+        "element": 4,
+        "rangeType": 1,
+        "cost": 510,
+        "index": 23,
+        "icon": 24,
+        "effects": [
+            {
+                "type": 19,
+                "subType": -1,
+                "durationBase": 3,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "chanceBase": 75,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Troll's Blood",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 660,
+        "index": 24,
+        "icon": 8,
+        "effects": [
+            {
+                "type": 18,
+                "subType": -1,
+                "durationBase": 5,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "magnitudeBaseLow": 5,
+                "magnitudeBaseHigh": 5,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Balyna's Balm",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 0,
+        "index": 97,
+        "icon": 3,
+        "effects": [
+            {
+                "type": 10,
+                "subType": 8,
+                "magnitudeBaseLow": 5,
+                "magnitudeBaseHigh": 15,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 2
+            }
+        ]
+    },
+    {
+        "spellName": "Fire Storm",
+        "element": 0,
+        "rangeType": 3,
+        "cost": 245,
+        "index": 25,
+        "icon": 58,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 26,
+                "magnitudeBaseHigh": 43,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Resist Poison",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 600,
+        "index": 26,
+        "icon": 13,
+        "effects": [
+            {
+                "type": 8,
+                "subType": 2,
+                "durationBase": 5,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "chanceBase": 25,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Spell Drain",
+        "element": 4,
+        "rangeType": 2,
+        "cost": 295,
+        "index": 27,
+        "icon": 16,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 2,
+                "magnitudeBaseLow": 40,
+                "magnitudeBaseHigh": 60,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Far Silence",
+        "element": 4,
+        "rangeType": 2,
+        "cost": 510,
+        "index": 28,
+        "icon": 24,
+        "effects": [
+            {
+                "type": 19,
+                "subType": -1,
+                "durationBase": 3,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "chanceBase": 50,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Toxic Cloud",
+        "element": 2,
+        "rangeType": 3,
+        "cost": 175,
+        "index": 29,
+        "icon": 57,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 30,
+                "magnitudeBaseHigh": 45,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Shalidor's Mirror",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 825,
+        "index": 30,
+        "icon": 47,
+        "effects": [
+            {
+                "type": 21,
+                "subType": -1,
+                "durationBase": 3,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "chanceBase": 50,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Lightning",
+        "element": 3,
+        "rangeType": 2,
+        "cost": 195,
+        "index": 31,
+        "icon": 51,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 30,
+                "magnitudeBaseHigh": 45,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Gods' Fire",
+        "element": 0,
+        "rangeType": 2,
+        "cost": 2500,
+        "index": 32,
+        "icon": 58,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 80,
+                "magnitudeBaseHigh": 130,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Wildfire",
+        "element": 0,
+        "rangeType": 2,
+        "cost": 435,
+        "index": 33,
+        "icon": 58,
+        "effects": [
+            {
+                "type": 1,
+                "subType": 0,
+                "durationBase": 5,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "magnitudeBaseLow": 10,
+                "magnitudeBaseHigh": 10,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Wizard Rend",
+        "element": 4,
+        "rangeType": 1,
+        "cost": 155,
+        "index": 34,
+        "icon": 64,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 2,
+                "magnitudeBaseLow": 20,
+                "magnitudeBaseHigh": 20,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            },
+            {
+                "type": 0,
+                "subType": -1,
+                "durationBase": 3,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "chanceBase": 35,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Medusa's Gaze",
+        "element": 4,
+        "rangeType": 2,
+        "cost": 915,
+        "index": 35,
+        "icon": 64,
+        "effects": [
+            {
+                "type": 0,
+                "subType": -1,
+                "durationBase": 3,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "chanceBase": 35,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Force Bolt",
+        "element": 4,
+        "rangeType": 2,
+        "cost": 275,
+        "index": 36,
+        "icon": 64,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 45,
+                "magnitudeBaseHigh": 65,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            },
+            {
+                "type": 0,
+                "subType": -1,
+                "durationBase": 3,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "chanceBase": 35,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Slowfalling",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 60,
+        "index": 37,
+        "icon": 43,
+        "effects": [
+            {
+                "type": 25,
+                "subType": -1,
+                "durationBase": 5,
+                "durationMod": 0,
+                "durationPerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Jumping",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 0,
+        "index": 38,
+        "icon": 40,
+        "effects": [
+            {
+                "type": 27,
+                "subType": -1,
+                "durationBase": 12,
+                "durationMod": 0,
+                "durationPerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Spell Resistance",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 0,
+        "index": 39,
+        "icon": 11,
+        "effects": [
+            {
+                "type": 22,
+                "subType": -1,
+                "durationBase": 5,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "chanceBase": 25,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Stamina",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 50,
+        "index": 40,
+        "icon": 3,
+        "effects": [
+            {
+                "type": 10,
+                "subType": 9,
+                "magnitudeBaseLow": 16,
+                "magnitudeBaseHigh": 24,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Water Walking",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 15,
+        "index": 41,
+        "icon": 44,
+        "effects": [
+            {
+                "type": 31,
+                "subType": -1,
+                "durationBase": 15,
+                "durationMod": 0,
+                "durationPerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Water Breathing",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 15,
+        "index": 42,
+        "icon": 6,
+        "effects": [
+            {
+                "type": 30,
+                "subType": -1,
+                "durationBase": 24,
+                "durationMod": 0,
+                "durationPerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Chameleon",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 50,
+        "index": 44,
+        "icon": 61,
+        "effects": [
+            {
+                "type": 23,
+                "subType": 0,
+                "durationBase": 6,
+                "durationMod": 0,
+                "durationPerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Shadow Form",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 50,
+        "index": 45,
+        "icon": 16,
+        "effects": [
+            {
+                "type": 24,
+                "subType": 0,
+                "durationBase": 6,
+                "durationMod": 0,
+                "durationPerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Spell Reflection",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 735,
+        "index": 46,
+        "icon": 9,
+        "effects": [
+            {
+                "type": 21,
+                "subType": -1,
+                "durationBase": 6,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "chanceBase": 20,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Spell Absorption",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 525,
+        "index": 47,
+        "icon": 25,
+        "effects": [
+            {
+                "type": 20,
+                "subType": -1,
+                "durationBase": 6,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "chanceBase": 25,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Tongues",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 535,
+        "index": 49,
+        "icon": 31,
+        "effects": [
+            {
+                "type": 44,
+                "subType": -1,
+                "durationBase": 6,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "chanceBase": 20,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Paralysis",
+        "element": 4,
+        "rangeType": 1,
+        "cost": 400,
+        "index": 50,
+        "icon": 66,
+        "effects": [
+            {
+                "type": 0,
+                "subType": -1,
+                "durationBase": 3,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "chanceBase": 35,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Sleep",
+        "element": 4,
+        "rangeType": 2,
+        "cost": 265,
+        "index": 51,
+        "icon": 54,
+        "effects": [
+            {
+                "type": 1,
+                "subType": 1,
+                "durationBase": 6,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "magnitudeBaseLow": 10,
+                "magnitudeBaseHigh": 20,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Vampiric Touch",
+        "element": 4,
+        "rangeType": 1,
+        "cost": 290,
+        "index": 52,
+        "icon": 8,
+        "effects": [
+            {
+                "type": 11,
+                "subType": 8,
+                "magnitudeBaseLow": 15,
+                "magnitudeBaseHigh": 30,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Hand of Sleep",
+        "element": 4,
+        "rangeType": 1,
+        "cost": 265,
+        "index": 53,
+        "icon": 54,
+        "effects": [
+            {
+                "type": 1,
+                "subType": 1,
+                "durationBase": 5,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "magnitudeBaseLow": 10,
+                "magnitudeBaseHigh": 20,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Magicka Leech",
+        "element": 4,
+        "rangeType": 1,
+        "cost": 315,
+        "index": 54,
+        "icon": 47,
+        "effects": [
+            {
+                "type": 1,
+                "subType": 2,
+                "durationBase": 5,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "magnitudeBaseLow": 10,
+                "magnitudeBaseHigh": 20,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Sphere of Negation",
+        "element": 4,
+        "rangeType": 2,
+        "cost": 950,
+        "index": 55,
+        "icon": 39,
+        "effects": [
+            {
+                "type": 5,
+                "subType": -1,
+                "chanceBase": 35,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Hand of Decay",
+        "element": 4,
+        "rangeType": 1,
+        "cost": 550,
+        "index": 56,
+        "icon": 39,
+        "effects": [
+            {
+                "type": 5,
+                "subType": -1,
+                "chanceBase": 35,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Banish Daedra",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 1075,
+        "index": 57,
+        "icon": 2,
+        "effects": [
+            {
+                "type": 6,
+                "subType": 2,
+                "chanceBase": 35,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Holy Word",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 550,
+        "index": 58,
+        "icon": 12,
+        "effects": [
+            {
+                "type": 6,
+                "subType": 1,
+                "chanceBase": 35,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Null Magicka",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 790,
+        "index": 59,
+        "icon": 31,
+        "effects": [
+            {
+                "type": 6,
+                "subType": 0,
+                "chanceBase": 35,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Balyna's Antidote",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 325,
+        "index": 60,
+        "icon": 49,
+        "effects": [
+            {
+                "type": 3,
+                "subType": 1,
+                "chanceBase": 35,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Cure Disease",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 300,
+        "index": 61,
+        "icon": 49,
+        "effects": [
+            {
+                "type": 3,
+                "subType": 0,
+                "chanceBase": 35,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Soul Trap",
+        "element": 4,
+        "rangeType": 1,
+        "cost": 745,
+        "index": 62,
+        "icon": 36,
+        "effects": [
+            {
+                "type": 12,
+                "subType": -1,
+                "durationBase": 3,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "chanceBase": 50,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Heal",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 145,
+        "index": 64,
+        "icon": 8,
+        "effects": [
+            {
+                "type": 10,
+                "subType": 8,
+                "magnitudeBaseLow": 40,
+                "magnitudeBaseHigh": 50,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Spider Touch",
+        "element": 4,
+        "rangeType": 1,
+        "cost": 890,
+        "index": 66,
+        "icon": 67,
+        "effects": [
+            {
+                "type": 0,
+                "subType": -1,
+                "durationBase": 3,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "chanceBase": 100,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Energy Leech",
+        "element": 4,
+        "rangeType": 1,
+        "cost": 570,
+        "index": 67,
+        "icon": 33,
+        "effects": [
+            {
+                "type": 11,
+                "subType": 9,
+                "magnitudeBaseLow": 40,
+                "magnitudeBaseHigh": 50,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Orc Strength",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 385,
+        "index": 82,
+        "icon": 4,
+        "effects": [
+            {
+                "type": 9,
+                "subType": 0,
+                "durationBase": 5,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "magnitudeBaseLow": 10,
+                "magnitudeBaseHigh": 10,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Wisdom",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 445,
+        "index": 83,
+        "icon": 5,
+        "effects": [
+            {
+                "type": 9,
+                "subType": 1,
+                "durationBase": 5,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "magnitudeBaseLow": 10,
+                "magnitudeBaseHigh": 10,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Iron Will",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 445,
+        "index": 84,
+        "icon": 45,
+        "effects": [
+            {
+                "type": 9,
+                "subType": 2,
+                "durationBase": 5,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "magnitudeBaseLow": 10,
+                "magnitudeBaseHigh": 10,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Nimbleness",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 445,
+        "index": 85,
+        "icon": 25,
+        "effects": [
+            {
+                "type": 9,
+                "subType": 3,
+                "durationBase": 5,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "magnitudeBaseLow": 10,
+                "magnitudeBaseHigh": 10,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Feet of Notorgo",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 445,
+        "index": 86,
+        "icon": 25,
+        "effects": [
+            {
+                "type": 9,
+                "subType": 6,
+                "durationBase": 5,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "magnitudeBaseLow": 10,
+                "magnitudeBaseHigh": 10,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Fortitude",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 445,
+        "index": 87,
+        "icon": 3,
+        "effects": [
+            {
+                "type": 9,
+                "subType": 4,
+                "durationBase": 5,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "magnitudeBaseLow": 10,
+                "magnitudeBaseHigh": 10,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Charisma",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 445,
+        "index": 88,
+        "icon": 44,
+        "effects": [
+            {
+                "type": 9,
+                "subType": 5,
+                "durationBase": 5,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "magnitudeBaseLow": 10,
+                "magnitudeBaseHigh": 10,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Jack of Trades",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 445,
+        "index": 89,
+        "icon": 4,
+        "effects": [
+            {
+                "type": 9,
+                "subType": 7,
+                "durationBase": 5,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "magnitudeBaseLow": 10,
+                "magnitudeBaseHigh": 10,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Charm Mortal",
+        "element": 4,
+        "rangeType": 1,
+        "cost": 2950,
+        "index": 90,
+        "icon": 6,
+        "effects": [
+            {
+                "type": 34,
+                "subType": -1,
+                "chanceBase": 35,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Calm Humanoid",
+        "element": 4,
+        "rangeType": 1,
+        "cost": 2950,
+        "index": 91,
+        "icon": 33,
+        "effects": [
+            {
+                "type": 33,
+                "subType": 2,
+                "chanceBase": 35,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Recall",
+        "element": 4,
+        "rangeType": 0,
+        "cost": 0,
+        "index": 94,
+        "icon": 24,
+        "effects": [
+            {
+                "type": 43,
+                "subType": -1
+            }
+        ]
+    },
+    {
+        "spellName": "Quiet Undead",
+        "element": 4,
+        "rangeType": 1,
+        "cost": 2950,
+        "index": 98,
+        "icon": 37,
+        "effects": [
+            {
+                "type": 33,
+                "subType": 1,
+                "chanceBase": 35,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Tame",
+        "element": 4,
+        "rangeType": 1,
+        "cost": 2950,
+        "index": 99,
+        "icon": 34,
+        "effects": [
+            {
+                "type": 33,
+                "subType": 0,
+                "chanceBase": 35,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "index": 100,
+        "spellName": "Cure Paralyzation",
+        "element": 4,
+        "rangeType": 0,
+        "icon": 40,
+        "effects": [
+            {
+                "type": 3,
+                "subType": 2,
+                "chanceBase": 35,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+            }
+        ]
+    }
+]

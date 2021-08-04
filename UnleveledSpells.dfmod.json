@@ -1,0 +1,17 @@
+{
+    "ModTitle": "Unleveled Spells",
+    "ModVersion": "0.1",
+    "ModAuthor": "kaboissonneault",
+    "ContactInfo": "kaboissonneault@gmail.com",
+    "DFUnity_Version": "0.11.5",
+    "ModDescription": "Removes the level-scaling components from spells and enchanted items",
+    "GUID": "eb8c0317-b8ab-4679-bf61-1eaaff77a1f3",
+    "Files": [
+        "Assets/Game/Mods/UnleveledSpells/UnleveledSpells.dfmod.json",
+        "Assets/Game/Mods/UnleveledSpells/SpellRecords.json",
+        "Assets/Game/Mods/UnleveledSpells/SpellCosts.csv",
+        "Assets/Game/Mods/UnleveledSpells/Scripts/UnleveledSpells.cs",
+        "Assets/Game/Mods/UnleveledSpells/Textures/Img/UnleveledSpellEffectEditorMask.png",
+        "Assets/Game/Mods/UnleveledSpells/Scripts/UnleveledSpellEffectEditor.cs"
+    ]
+}
