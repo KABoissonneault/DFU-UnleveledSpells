@@ -12,6 +12,7 @@
         "Assets/Game/Mods/UnleveledSpells/SpellCosts.csv",
         "Assets/Game/Mods/UnleveledSpells/Scripts/UnleveledSpells.cs",
         "Assets/Game/Mods/UnleveledSpells/Textures/Img/UnleveledSpellEffectEditorMask.png",
-        "Assets/Game/Mods/UnleveledSpells/Scripts/UnleveledSpellEffectEditor.cs"
+        "Assets/Game/Mods/UnleveledSpells/Scripts/UnleveledSpellEffectEditor.cs",
+        "Assets/Game/Mods/UnleveledSpells/Scripts/UnleveledSpellsTextProvider.cs"
     ]
 }

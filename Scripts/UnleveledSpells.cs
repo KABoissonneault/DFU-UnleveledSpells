@@ -9,6 +9,7 @@ using DaggerfallWorkshop.Game.Entity;
 using System.Linq;
 using DaggerfallConnect;
 using DaggerfallWorkshop.Game.UserInterfaceWindows;
+using DaggerfallWorkshop;
 
 namespace UnleveledSpellsMod
 {
@@ -41,6 +42,22 @@ namespace UnleveledSpellsMod
             FormulaHelper.RegisterOverride<Func<IEntityEffect, EffectSettings, DaggerfallEntity, FormulaHelper.SpellCost>>(mod, "CalculateEffectCosts", CalculateEffectCosts);
 
             UIWindowFactory.RegisterCustomUIWindow(UIWindowType.EffectSettingsEditor, typeof(UnleveledSpellEffectEditor));
+
+            DaggerfallUnity.Instance.TextProvider = new UnleveledSpellsTextProvider(DaggerfallUnity.Instance.TextProvider);
+
+            // Fix IK's Mage Light -- Inferno :)
+            try
+            {
+                EntityEffectBroker.CustomSpellBundleOffer MageLightInferno = GameManager.Instance.EntityEffectBroker.GetCustomSpellBundleOffer("MageLightInferno-CustomOffer");
+                ref EffectSettings effect = ref MageLightInferno.BundleSetttings.Effects[0].Settings;
+                effect.DurationBase = 15;
+                effect.DurationPlus = 0;
+                effect.DurationPerLevel = 1;
+            }
+            catch(Exception e)
+            {
+                Debug.LogError(e.Message);
+            }
 
             Debug.Log("Finished mod init: Unleveled Spells");
         }

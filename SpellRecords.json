@@ -373,7 +373,7 @@
         "rangeType": 0,
         "cost": 660,
         "index": 22,
-        "icon": 9,
+        "icon": 11,
         "effects": [
             {
                 "type": 22,
@@ -381,7 +381,7 @@
                 "durationBase": 3,
                 "durationMod": 0,
                 "durationPerLevel": 1,
-                "chanceBase": 25,
+                "chanceBase": 50,
                 "chanceMod": 0,
                 "chancePerLevel": 1
             }
@@ -804,7 +804,7 @@
             {
                 "type": 30,
                 "subType": -1,
-                "durationBase": 24,
+                "durationBase": 6,
                 "durationMod": 0,
                 "durationPerLevel": 1
             }
@@ -1221,7 +1221,7 @@
                 "durationMod": 0,
                 "durationPerLevel": 1,
                 "magnitudeBaseLow": 10,
-                "magnitudeBaseHigh": 10,
+                "magnitudeBaseHigh": 20,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
@@ -1243,7 +1243,7 @@
                 "durationMod": 0,
                 "durationPerLevel": 1,
                 "magnitudeBaseLow": 10,
-                "magnitudeBaseHigh": 10,
+                "magnitudeBaseHigh": 20,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
@@ -1265,7 +1265,7 @@
                 "durationMod": 0,
                 "durationPerLevel": 1,
                 "magnitudeBaseLow": 10,
-                "magnitudeBaseHigh": 10,
+                "magnitudeBaseHigh": 20,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
@@ -1287,7 +1287,7 @@
                 "durationMod": 0,
                 "durationPerLevel": 1,
                 "magnitudeBaseLow": 10,
-                "magnitudeBaseHigh": 10,
+                "magnitudeBaseHigh": 20,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
@@ -1309,7 +1309,7 @@
                 "durationMod": 0,
                 "durationPerLevel": 1,
                 "magnitudeBaseLow": 10,
-                "magnitudeBaseHigh": 10,
+                "magnitudeBaseHigh": 20,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
@@ -1331,7 +1331,7 @@
                 "durationMod": 0,
                 "durationPerLevel": 1,
                 "magnitudeBaseLow": 10,
-                "magnitudeBaseHigh": 10,
+                "magnitudeBaseHigh": 20,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
@@ -1353,7 +1353,7 @@
                 "durationMod": 0,
                 "durationPerLevel": 1,
                 "magnitudeBaseLow": 10,
-                "magnitudeBaseHigh": 10,
+                "magnitudeBaseHigh": 20,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
@@ -1375,7 +1375,7 @@
                 "durationMod": 0,
                 "durationPerLevel": 1,
                 "magnitudeBaseLow": 10,
-                "magnitudeBaseHigh": 10,
+                "magnitudeBaseHigh": 20,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
