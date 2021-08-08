@@ -532,7 +532,7 @@
         "rangeType": 3,
         "cost": 175,
         "index": 29,
-        "icon": 57,
+        "icon": 46,
         "effects": [
             {
                 "type": 4,
@@ -1477,6 +1477,42 @@
                 "chanceBase": 35,
                 "chanceMod": 0,
                 "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "index": 101,
+        "spellName": "!ImpCloud",
+        "element": 4,
+        "rangeType": 3,
+        "icon": 46,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 12,
+                "magnitudeBaseHigh": 24,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "index": 102,
+        "spellName": "!ImpFire",
+        "element": 4,
+        "rangeType": 1,
+        "icon": 58,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 8,
+                "magnitudeBaseHigh": 18,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
             }
         ]
     }

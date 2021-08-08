@@ -54,10 +54,12 @@ namespace UnleveledSpellsMod
                 effect.DurationPlus = 0;
                 effect.DurationPerLevel = 1;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Debug.LogError(e.Message);
             }
+
+            EnemyEntity.OnLootSpawned += OnEnemySpawned;
 
             Debug.Log("Finished mod init: Unleveled Spells");
         }
@@ -152,22 +154,22 @@ namespace UnleveledSpellsMod
 
         private FormulaHelper.SpellCost CalculateEffectCosts(IEntityEffect effect, EffectSettings settings, DaggerfallEntity casterEntity)
         {
-            if(factorOverride.TryGetValue(effect.Key, out float factor))
+            if (factorOverride.TryGetValue(effect.Key, out float factor))
             {
                 float durationFactor = 1;
-                if(effect.Properties.SupportDuration)
+                if (effect.Properties.SupportDuration)
                 {
                     durationFactor = settings.DurationBase;
                 }
 
                 float chanceFactor = 1;
-                if(effect.Properties.SupportChance)
+                if (effect.Properties.SupportChance)
                 {
                     chanceFactor = Mathf.Pow(settings.ChanceBase / 100.0f, 1.28f);
                 }
 
                 float magnitudeFactor = 1;
-                if(effect.Properties.SupportMagnitude)
+                if (effect.Properties.SupportMagnitude)
                 {
                     float magnitudeBase = (settings.MagnitudeBaseMin + settings.MagnitudeBaseMax) / 2.0f;
                     magnitudeFactor = Mathf.Pow(magnitudeBase, 1.1f);
@@ -287,6 +289,233 @@ namespace UnleveledSpellsMod
             effectCost.spellPointCost = Mathf.RoundToInt(effectCost.goldCost * (60 - (Math.Min(skillValue, 100) / 2)) / 400.0f);
 
             return effectCost;
+        }
+
+        /*
+        static byte[] ImpSpells = // Level 2
+        {
+            0x07, // Wizard's Fire (1-15+2d4)
+            0x0A, // Free Action 
+            0x1D, // Toxic Cloud (1-25+2d5)
+            0x2C // Chameleon
+        };
+        */ 
+
+        static byte[] ImpSpells = // Level 2
+        {
+            0x67, // Wizard's Fire (8-18)
+            0x0A, // Free Action 
+            0x66, // Toxic Cloud (12-24)
+            0x2C // Chameleon
+        };
+
+        static byte[] GhostSpells = // Level 11
+        {
+            0x22 // Wizard Rend (12-25) | (65% for 12 rounds)
+        };
+
+        static byte[] OrcShamanSpells = // Level 13
+        {
+            0x06, // Invisibility 
+            0x07, // Wizard's Fire (14-67)
+            0x16, // Spell Shield (76% for 14 rounds)
+            0x19, // Fire Storm (14-85)
+            0x1F // Lightning (14-80)
+        };
+
+        static byte[] WraithSpells = // Level 15
+        {
+            0x1C, // Far Silence (65% for 16 rounds)
+            0x1F // Lightning (16-90)
+        };
+
+        static byte[] FrostDaedraSpells = // Level 17
+        {
+            0x10, // Ice Bolt (18-120)
+            0x14 // Ice Storm (18-115)
+        };
+
+        static byte[] FireDaedraSpells = // Level 17
+        {
+            0x0E, // Fireball (18-120)
+            0x19 // Fire Storm (18-105)
+        };
+
+        static byte[] DaedrothSpells = // Level 18
+        {
+            0x16, // Spell Shield (86% for 19 rounds)
+            0x17, // Silence (71% for 19 rounds)
+            0x1F // Lightning (19-115)
+        };
+
+        static byte[] VampireSpells = // Level 19
+        {
+            0x33 // Sleep (20-110 for 43 rounds)
+                // Probably meant to be 0x34, Vampiric Touch
+        };
+
+        static byte[] SeducerSpells = // Level 19
+        {
+            0x34, // Vampiric Touch (20-110)
+            0x43 // Energy Leech (96-105)
+        };
+
+        static byte[] VampireAncientSpells = // Level 20
+        {
+            0x08, // Shock (21-100)
+            0x32 // Paralysis (65% for 23 rounds)
+        };
+
+        static byte[] DaedraLordSpells = // Level 20
+        {
+            0x08, // Shock (21-100)
+            0x0A, // Free Action
+            0x0E, // Fireball (21-141)
+            0x3C, // Balyna's Antidote (100%)
+            0x43 // Energy Leech (101-110)
+        };
+
+        static byte[] LichSpells = // Level 20
+        {
+            0x08, // Shock (21-100)
+            0x0A, // Free Action
+            0x0E, // Fireball (21-141)
+            0x22, // Wizard Rend (21-35) | (100% for 21 rounds)
+            0x3C // Balyna's Antidote (100%)
+        };
+
+        static byte[] AncientLichSpells = // Level 21
+        {
+            0x08, // Shock (22-104)
+            0x0A, // Free Action
+            0x0E, // Fireball (22-148)
+            0x1D, // Toxic Cloud (22-130)
+            0x1F, // Lightning (22-130)
+            0x22, // Wizard Rend (22-36) | (100% for 22 rounds)
+            0x3C // Balyna's Antidote (100%)
+        };
+
+        static byte[] EnemyClass1_2 =
+        {
+            0x10, // Ice Bolt (18-120)
+            0x14 // Ice Storm (18-115)
+        };
+
+        static byte[] EnemyClass3_5 =
+        {
+            0x16, // Spell Shield (86% for 19 rounds)
+            0x17, // Silence (71% for 19 rounds)
+            0x1F // Lightning (19-115)
+        };
+
+        static byte[] EnemyClass6_8 =
+        {
+            0x06, // Invisibility 
+            0x07, // Wizard's Fire (14-67)
+            0x16, // Spell Shield (76% for 14 rounds)
+            0x19, // Fire Storm (14-85)
+            0x1F // Lightning (14-80)
+        };
+
+        static byte[] EnemyClass9_11 =
+        {
+            0x08, // Shock (21-100)
+            0x32 // Paralysis (65% for 23 rounds)
+        };
+
+        static byte[] EnemyClass12_14 =
+        {
+            0x08, // Shock (21-100)
+            0x0A, // Free Action
+            0x0E, // Fireball (21-141)
+            0x3C, // Balyna's Antidote (100%)
+            0x43 // Energy Leech (101-110)
+        };
+
+        static byte[] EnemyClass15_17 =
+        {
+            0x08, // Shock (21-100)
+            0x0A, // Free Action
+            0x0E, // Fireball (21-141)
+            0x22, // Wizard Rend (21-35) | (100% for 21 rounds)
+            0x3C // Balyna's Antidote (100%)
+        };
+
+        static byte[] EnemyClass18 =
+        {
+            0x08, // Shock (22-104)
+            0x0A, // Free Action
+            0x0E, // Fireball (22-148)
+            0x1D, // Toxic Cloud (22-130)
+            0x1F, // Lightning (22-130)
+            0x22, // Wizard Rend (22-36) | (100% for 22 rounds)
+            0x3C // Balyna's Antidote (100%)
+        };
+
+        static byte[][] EnemyClassSpells =
+        {
+            EnemyClass1_2, // 1-2
+            EnemyClass3_5, // 3-5
+            EnemyClass6_8, // 6-8
+            EnemyClass9_11, // 9-11
+            EnemyClass12_14, // 12-14
+            EnemyClass15_17, // 15-17
+            EnemyClass18 // 18+
+        };
+
+        // Spider (Level 4)
+        // Spider Touch (65% for 5 rounds)
+
+        // Scorpion (Level 12)
+        // Spider Touch (100% for 13 rounds)
+
+        void OnEnemySpawned(object sender, EnemyLootSpawnedEventArgs args)
+        {
+            var enemyEntity = sender as EnemyEntity;
+            if (enemyEntity == null)
+                return;
+
+            // Reset spells
+            while (enemyEntity.SpellbookCount() > 0)
+                enemyEntity.DeleteSpell(enemyEntity.SpellbookCount() - 1);
+
+            // Assign new
+            if (enemyEntity.EntityType == EntityTypes.EnemyClass && (enemyEntity.MobileEnemy.CastsMagic))
+            {
+                int spellListLevel = enemyEntity.Level / 3;
+                if (spellListLevel > 6)
+                    spellListLevel = 6;
+                enemyEntity.SetEnemySpells(EnemyClassSpells[spellListLevel]);
+            }
+            else
+            {
+                if (enemyEntity.CareerIndex == (int)MonsterCareers.Imp)
+                    enemyEntity.SetEnemySpells(ImpSpells);
+                else if (enemyEntity.CareerIndex == (int)MonsterCareers.Ghost)
+                    enemyEntity.SetEnemySpells(GhostSpells);
+                else if (enemyEntity.CareerIndex == (int)MonsterCareers.OrcShaman)
+                    enemyEntity.SetEnemySpells(OrcShamanSpells);
+                else if (enemyEntity.CareerIndex == (int)MonsterCareers.Wraith)
+                    enemyEntity.SetEnemySpells(WraithSpells);
+                else if (enemyEntity.CareerIndex == (int)MonsterCareers.FrostDaedra)
+                    enemyEntity.SetEnemySpells(FrostDaedraSpells);
+                else if (enemyEntity.CareerIndex == (int)MonsterCareers.FireDaedra)
+                    enemyEntity.SetEnemySpells(FireDaedraSpells);
+                else if (enemyEntity.CareerIndex == (int)MonsterCareers.Daedroth)
+                    enemyEntity.SetEnemySpells(DaedrothSpells);
+                else if (enemyEntity.CareerIndex == (int)MonsterCareers.Vampire)
+                    enemyEntity.SetEnemySpells(VampireSpells);
+                else if (enemyEntity.CareerIndex == (int)MonsterCareers.DaedraSeducer)
+                    enemyEntity.SetEnemySpells(SeducerSpells);
+                else if (enemyEntity.CareerIndex == (int)MonsterCareers.VampireAncient)
+                    enemyEntity.SetEnemySpells(VampireAncientSpells);
+                else if (enemyEntity.CareerIndex == (int)MonsterCareers.DaedraLord)
+                    enemyEntity.SetEnemySpells(DaedraLordSpells);
+                else if (enemyEntity.CareerIndex == (int)MonsterCareers.Lich)
+                    enemyEntity.SetEnemySpells(LichSpells);
+                else if (enemyEntity.CareerIndex == (int)MonsterCareers.AncientLich)
+                    enemyEntity.SetEnemySpells(AncientLichSpells);
+            }
         }
     }
 }
