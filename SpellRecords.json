@@ -89,7 +89,7 @@
     {
         "spellName": "Invisibility",
         "element": 4,
-        "rangeType": 1,
+        "rangeType": 0,
         "cost": 145,
         "index": 6,
         "icon": 62,
@@ -114,8 +114,8 @@
             {
                 "type": 4,
                 "subType": 0,
-                "magnitudeBaseLow": 20,
-                "magnitudeBaseHigh": 35,
+                "magnitudeBaseLow": 13,
+                "magnitudeBaseHigh": 27,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
@@ -133,8 +133,8 @@
             {
                 "type": 4,
                 "subType": 0,
-                "magnitudeBaseLow": 25,
-                "magnitudeBaseHigh": 35,
+                "magnitudeBaseLow": 11,
+                "magnitudeBaseHigh": 25,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
@@ -248,8 +248,8 @@
             {
                 "type": 4,
                 "subType": 0,
-                "magnitudeBaseLow": 25,
-                "magnitudeBaseHigh": 42,
+                "magnitudeBaseLow": 52,
+                "magnitudeBaseHigh": 85,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
@@ -279,13 +279,13 @@
         "rangeType": 2,
         "cost": 245,
         "index": 16,
-        "icon": 56,
+        "icon": 49,
         "effects": [
             {
                 "type": 4,
                 "subType": 0,
-                "magnitudeBaseLow": 34,
-                "magnitudeBaseHigh": 50,
+                "magnitudeBaseLow": 25,
+                "magnitudeBaseHigh": 59,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
@@ -351,7 +351,7 @@
     {
         "spellName": "Ice Storm",
         "element": 1,
-        "rangeType": 4,
+        "rangeType": 3,
         "cost": 195,
         "index": 20,
         "icon": 56,
@@ -359,8 +359,8 @@
             {
                 "type": 4,
                 "subType": 0,
-                "magnitudeBaseLow": 29,
-                "magnitudeBaseHigh": 50,
+                "magnitudeBaseLow": 52,
+                "magnitudeBaseHigh": 81,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
@@ -444,7 +444,7 @@
                 "magnitudeBaseHigh": 15,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
-                "magnitudePerLevel": 2
+                "magnitudePerLevel": 1
             }
         ]
     },
@@ -537,8 +537,8 @@
             {
                 "type": 4,
                 "subType": 0,
-                "magnitudeBaseLow": 30,
-                "magnitudeBaseHigh": 45,
+                "magnitudeBaseLow": 25,
+                "magnitudeBaseHigh": 49,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
@@ -576,8 +576,8 @@
             {
                 "type": 4,
                 "subType": 0,
-                "magnitudeBaseLow": 30,
-                "magnitudeBaseHigh": 45,
+                "magnitudeBaseLow": 34,
+                "magnitudeBaseHigh": 58,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
@@ -636,8 +636,8 @@
             {
                 "type": 4,
                 "subType": 2,
-                "magnitudeBaseLow": 20,
-                "magnitudeBaseHigh": 20,
+                "magnitudeBaseLow": 12,
+                "magnitudeBaseHigh": 24,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
@@ -1510,6 +1510,150 @@
                 "subType": 0,
                 "magnitudeBaseLow": 8,
                 "magnitudeBaseHigh": 18,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "index": 103,
+        "spellName": "!Mauloch's Fire",
+        "element": 0,
+        "rangeType": 2,
+        "icon": 58,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 33,
+                "magnitudeBaseHigh": 47,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "index": 104,
+        "spellName": "!Orc Storm",
+        "element": 0,
+        "rangeType": 3,
+        "icon": 58,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 40,
+                "magnitudeBaseHigh": 59,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "index": 106,
+        "spellName": "!WraithScreech",
+        "element": 1,
+        "rangeType": 2,
+        "icon": 23,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 46,
+                "magnitudeBaseHigh": 70,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "index": 107,
+        "spellName": "!FrostDaedraBolt",
+        "element": 1,
+        "rangeType": 2,
+        "icon": 49,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 52,
+                "magnitudeBaseHigh": 86,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "index": 110,
+        "spellName": "!FireDaedraStorm",
+        "element": 0,
+        "rangeType": 3,
+        "icon": 58,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 52,
+                "magnitudeBaseHigh": 71,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "index": 111,
+        "spellName": "!DaedrothLightning",
+        "element": 3,
+        "rangeType": 2,
+        "icon": 51,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 55,
+                "magnitudeBaseHigh": 79,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "index": 112,
+        "spellName": "!AncientVampiricTouch",
+        "element": 4,
+        "rangeType": 1,
+        "icon": 8,
+        "effects": [
+            {
+                "type": 11,
+                "subType": 8,
+                "magnitudeBaseLow": 31,
+                "magnitudeBaseHigh": 50,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "index": 113,
+        "spellName": "!AncientToxicCloud",
+        "element": 4,
+        "rangeType": 3,
+        "icon": 46,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 64,
+                "magnitudeBaseHigh": 88,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
