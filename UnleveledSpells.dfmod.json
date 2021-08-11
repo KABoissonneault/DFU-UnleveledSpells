@@ -1,6 +1,6 @@
 {
     "ModTitle": "Unleveled Spells",
-    "ModVersion": "0.1",
+    "ModVersion": "0.1.1",
     "ModAuthor": "kaboissonneault",
     "ContactInfo": "kaboissonneault@gmail.com",
     "DFUnity_Version": "0.12.0",
@@ -21,7 +21,7 @@
             "Name": "hotkey bar",
             "IsOptional": true,
             "IsPeer": false,
-            "Version": "0.5.2"
+            "Version": "0.6.0"
         }
     ]
 }
