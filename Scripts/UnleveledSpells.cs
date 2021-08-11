@@ -42,6 +42,7 @@ namespace UnleveledSpellsMod
             FormulaHelper.RegisterOverride<Func<IEntityEffect, EffectSettings, DaggerfallEntity, FormulaHelper.SpellCost>>(mod, "CalculateEffectCosts", CalculateEffectCosts);
 
             UIWindowFactory.RegisterCustomUIWindow(UIWindowType.EffectSettingsEditor, typeof(UnleveledSpellEffectEditor));
+            UIWindowFactory.RegisterCustomUIWindow(UIWindowType.SpellBook, typeof(UnleveledSpellsSpellbookWindow));
 
             DaggerfallUnity.Instance.TextProvider = new UnleveledSpellsTextProvider(DaggerfallUnity.Instance.TextProvider);
 

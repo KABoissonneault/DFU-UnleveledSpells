@@ -3,7 +3,7 @@
     "ModVersion": "0.1",
     "ModAuthor": "kaboissonneault",
     "ContactInfo": "kaboissonneault@gmail.com",
-    "DFUnity_Version": "0.11.5",
+    "DFUnity_Version": "0.12.0",
     "ModDescription": "Removes the level-scaling components from spells and enchanted items",
     "GUID": "eb8c0317-b8ab-4679-bf61-1eaaff77a1f3",
     "Files": [
@@ -13,6 +13,15 @@
         "Assets/Game/Mods/UnleveledSpells/Scripts/UnleveledSpells.cs",
         "Assets/Game/Mods/UnleveledSpells/Textures/Img/UnleveledSpellEffectEditorMask.png",
         "Assets/Game/Mods/UnleveledSpells/Scripts/UnleveledSpellEffectEditor.cs",
-        "Assets/Game/Mods/UnleveledSpells/Scripts/UnleveledSpellsTextProvider.cs"
+        "Assets/Game/Mods/UnleveledSpells/Scripts/UnleveledSpellsTextProvider.cs",
+        "Assets/Game/Mods/UnleveledSpells/Scripts/UnleveledSpellsSpellbookWindow.cs"
+    ],
+    "Dependencies": [
+        {
+            "Name": "hotkey bar",
+            "IsOptional": true,
+            "IsPeer": false,
+            "Version": "0.5.2"
+        }
     ]
 }
