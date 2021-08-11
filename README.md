@@ -1,4 +1,4 @@
-# Kab's UnleveledS pells
+# Kab's Unleveled Spells
 Unleveled Spells mod for Daggerfall Unity. Removes level-scaling from spells, in addition to some other magic overhauls.
 
 ## Features
