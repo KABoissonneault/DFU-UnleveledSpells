@@ -49,6 +49,6 @@ Since I was in the process of editing all the spells in the game, I also fixed i
 ## Conclusion
 This is an early release, late-game balance hasn't even been tested (I'm working on it). All forms of feedback on all aspects of the mod are welcome. Please report any issue you see on the Nexus page, in the dfworkshop forums, or the Github.
 
-Source code: https://github.com/KABoissonneault/DFU-UnleveledSpells
-Enemy spells (before and after): https://github.com/KABoissonneault/DFU-UnleveledSpells/blob/main/Scripts/UnleveledSpells.cs#L307
-Spell effect cost spreadsheet: https://github.com/KABoissonneault/DFU-UnleveledSpells/blob/main/UnleveledSpells.ods
+- Source code: https://github.com/KABoissonneault/DFU-UnleveledSpells
+- Enemy spells (before and after): https://github.com/KABoissonneault/DFU-UnleveledSpells/blob/main/Scripts/UnleveledSpells.cs#L307
+- Spell effect cost spreadsheet: https://github.com/KABoissonneault/DFU-UnleveledSpells/blob/main/UnleveledSpells.ods
