@@ -10,17 +10,27 @@ using System.Linq;
 using DaggerfallConnect;
 using DaggerfallWorkshop.Game.UserInterfaceWindows;
 using DaggerfallWorkshop;
+using DaggerfallWorkshop.Game.Utility.ModSupport.ModSettings;
+using DaggerfallConnect.Arena2;
 
 namespace UnleveledSpellsMod
 {
     public class UnleveledSpells : MonoBehaviour
     {
         private static Mod mod;
+        private static UnleveledSpells instance;
+        public static UnleveledSpells Instance { get { return instance; } }
+
+        private UnleveledMagicRegeneration magicRegen;
 
         private readonly Dictionary<string, EffectCosts> durationCostOverride = new Dictionary<string, EffectCosts>();
         private readonly Dictionary<string, EffectCosts> chanceCostOverride = new Dictionary<string, EffectCosts>();
         private readonly Dictionary<string, EffectCosts> magnitudeCostOverride = new Dictionary<string, EffectCosts>();
         private readonly Dictionary<string, float> factorOverride = new Dictionary<string, float>();
+
+        private EntityEffectBroker.OnNewMagicRoundEventHandler warningDelegate;
+
+        const string MagicRegenSection = "MagicRegen";
 
         [Invoke(StateManager.StateTypes.Start, 0)]
         public static void Init(InitParams initParams)
@@ -28,14 +38,19 @@ namespace UnleveledSpellsMod
             mod = initParams.Mod;
 
             var go = new GameObject(mod.Title);
-            go.AddComponent<UnleveledSpells>();
+            instance = go.AddComponent<UnleveledSpells>();
+            instance.magicRegen = go.AddComponent<UnleveledMagicRegeneration>();
+
+            mod.LoadSettingsCallback = LoadSettings;
 
             mod.IsReady = true;
         }
-
+        
         private void Start()
         {
             Debug.Log("Begin mod init: Unleveled Spells");
+
+            mod.LoadSettings();
 
             ParseCostOverrides();
 
@@ -65,6 +80,54 @@ namespace UnleveledSpellsMod
             Debug.Log("Finished mod init: Unleveled Spells");
         }
 
+        private void OnDestroy()
+        {
+            if (instance.warningDelegate != null)
+            {
+                EntityEffectBroker.OnNewMagicRound -= instance.warningDelegate;
+                instance.warningDelegate = null;
+            }
+        }
+
+        #region Settings
+
+        static void LoadSettings(ModSettings modSettings, ModSettingsChange change)
+        {
+            bool regenMagic = modSettings.GetBool(MagicRegenSection, "Enabled");
+            instance.magicRegen.enabled = regenMagic;
+
+            void MagicRegenWarn()
+            {
+                TextFile.Token[] tokens = DaggerfallUnity.Instance.TextProvider.CreateTokens(TextFile.Formatting.JustifyCenter,
+                        "Unleveled Spells' magic regen and Basic Magic Regen are conflicting.",
+                        "Disable either one in the Mod Settings"
+                        );
+                DaggerfallUI.AddHUDText(tokens, 5.0f);
+            }
+
+            if (regenMagic && IsModEnabled("BasicMagicRegen"))
+            {
+                instance.warningDelegate = MagicRegenWarn;
+                EntityEffectBroker.OnNewMagicRound += instance.warningDelegate;
+            }
+            else
+            {
+                if (instance.warningDelegate == MagicRegenWarn)
+                {
+                    EntityEffectBroker.OnNewMagicRound -= instance.warningDelegate;
+                    instance.warningDelegate = null;
+                }
+            }
+        }
+
+        static bool IsModEnabled(string modName)
+        {
+            Mod mod = ModManager.Instance.GetMod(modName);
+            return mod != null && mod.Enabled;
+        }
+        #endregion
+
+        #region Spell Costs
         void ParseCostOverrides()
         {
             TextAsset costsFile = mod.GetAsset<TextAsset>("SpellCosts.csv");
@@ -291,5 +354,6 @@ namespace UnleveledSpellsMod
 
             return effectCost;
         }
+        #endregion
     }
 }

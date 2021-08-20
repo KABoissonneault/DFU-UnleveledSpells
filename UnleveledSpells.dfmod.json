@@ -1,6 +1,6 @@
 {
     "ModTitle": "Unleveled Spells",
-    "ModVersion": "0.1.1",
+    "ModVersion": "0.1.2",
     "ModAuthor": "kaboissonneault",
     "ContactInfo": "kaboissonneault@gmail.com",
     "DFUnity_Version": "0.12.0",
@@ -14,7 +14,10 @@
         "Assets/Game/Mods/UnleveledSpells/Textures/Img/UnleveledSpellEffectEditorMask.png",
         "Assets/Game/Mods/UnleveledSpells/Scripts/UnleveledSpellEffectEditor.cs",
         "Assets/Game/Mods/UnleveledSpells/Scripts/UnleveledSpellsTextProvider.cs",
-        "Assets/Game/Mods/UnleveledSpells/Scripts/UnleveledSpellsSpellbookWindow.cs"
+        "Assets/Game/Mods/UnleveledSpells/Scripts/UnleveledSpellsSpellbookWindow.cs",
+        "Assets/Game/Mods/UnleveledSpells/Scripts/UnleveledEnemySpells.cs",
+        "Assets/Game/Mods/UnleveledSpells/Scripts/UnleveledMagicRegeneration.cs",
+        "Assets/Game/Mods/UnleveledSpells/modsettings.json"
     ],
     "Dependencies": [
         {

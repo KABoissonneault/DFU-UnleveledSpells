@@ -1,0 +1,20 @@
+{
+    "Version": "1",
+    "Sections": [
+        {
+            "Name": "MagicRegen",
+            "Description": "Spell point regeneration each round",
+            "IsAdvanced": false,
+            "Keys": [
+                {
+                    "Value": false,
+                    "Name": "Enabled",
+                    "Description": "Whether to use real-time regeneration at all",
+                    "$version": "v1",
+                    "$type": "DaggerfallWorkshop.Game.Utility.ModSupport.ModSettings.ToggleKey"
+                }
+            ],
+            "$version": "v1"
+        }
+    ]
+}
