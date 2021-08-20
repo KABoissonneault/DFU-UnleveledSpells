@@ -52,6 +52,20 @@ namespace UnleveledSpellsMod
 
             mod.LoadSettings();
 
+            if(IsModEnabled("Skilled Spells"))
+            {
+                void SkilledSpellsWarning()
+                {
+                    TextFile.Token[] tokens = DaggerfallUnity.Instance.TextProvider.CreateTokens(TextFile.Formatting.JustifyCenter,
+                        "Unleveled Spells and Skilled Spells are conflicting.",
+                        "Restart Daggerfall Unity and disable Skilled Spells"
+                        );
+                    DaggerfallUI.AddHUDText(tokens, 5.0f);
+                }
+
+                AssignWarning(SkilledSpellsWarning);
+            }
+
             ParseCostOverrides();
 
             FormulaHelper.RegisterOverride<Func<IEntityEffect, EffectSettings, DaggerfallEntity, FormulaHelper.SpellCost>>(mod, "CalculateEffectCosts", CalculateEffectCosts);
@@ -82,10 +96,21 @@ namespace UnleveledSpellsMod
 
         private void OnDestroy()
         {
-            if (instance.warningDelegate != null)
+            AssignWarning(null);
+        }
+
+        private void AssignWarning(EntityEffectBroker.OnNewMagicRoundEventHandler handler)
+        {
+            if (warningDelegate != null)
             {
-                EntityEffectBroker.OnNewMagicRound -= instance.warningDelegate;
-                instance.warningDelegate = null;
+                EntityEffectBroker.OnNewMagicRound -= warningDelegate;
+            }
+
+            warningDelegate = handler;
+
+            if (warningDelegate != null)
+            {
+                EntityEffectBroker.OnNewMagicRound += warningDelegate;
             }
         }
 
@@ -107,8 +132,7 @@ namespace UnleveledSpellsMod
 
             if (regenMagic && IsModEnabled("BasicMagicRegen"))
             {
-                instance.warningDelegate = MagicRegenWarn;
-                EntityEffectBroker.OnNewMagicRound += instance.warningDelegate;
+                instance.AssignWarning(MagicRegenWarn);
             }
             else
             {
