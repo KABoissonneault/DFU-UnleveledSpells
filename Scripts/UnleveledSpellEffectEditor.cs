@@ -110,6 +110,15 @@ class UnleveledSpellEffectEditor : DaggerfallEffectSettingsEditorWindow
         magnitudeBaseMaxSpinner.SetRange(1, 999);
         
         // Set spinner events
+        durationBaseSpinner.OnUpButtonClicked += DurationBaseSpinner_OnUpButton;
+        durationBaseSpinner.OnDownButtonClicked += DurationBaseSpinner_OnDownButton;
+        chanceBaseSpinner.OnUpButtonClicked += ChanceBaseSpinner_OnUpButton;
+        chanceBaseSpinner.OnDownButtonClicked += ChanceBaseSpinner_OnDownButton;
+        magnitudeBaseMinSpinner.OnUpButtonClicked += MagnitudeBaseMinSpinner_OnUpButton;
+        magnitudeBaseMinSpinner.OnDownButtonClicked += MagnitudeBaseMinSpinner_OnDownButton;
+        magnitudeBaseMaxSpinner.OnUpButtonClicked += MagnitudeBaseMaxSpinner_OnUpButton;
+        magnitudeBaseMaxSpinner.OnDownButtonClicked += MagnitudeBaseMaxSpinner_OnDownButton;
+
         durationBaseSpinner.OnValueChanged += DurationBaseSpinner_OnValueChanged;
         chanceBaseSpinner.OnValueChanged += ChanceBaseSpinner_OnValueChanged;
         magnitudeBaseMinSpinner.OnValueChanged += MagnitudeBaseMinSpinner_OnValueChanged;
@@ -230,6 +239,74 @@ class UnleveledSpellEffectEditor : DaggerfallEffectSettingsEditorWindow
         chanceBaseSpinner.Value = settings.ChanceBase;
         magnitudeBaseMinSpinner.Value = settings.MagnitudeBaseMin;
         magnitudeBaseMaxSpinner.Value = settings.MagnitudeBaseMax;
+    }
+
+    #endregion
+
+    #region Event Handlers
+
+    protected void DurationBaseSpinner_OnUpButton()
+    {
+        if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            durationBaseSpinner.Value += 9;
+        }
+    }
+
+    protected void DurationBaseSpinner_OnDownButton()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            durationBaseSpinner.Value -= 9;
+        }
+    }
+
+    protected void ChanceBaseSpinner_OnUpButton()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            chanceBaseSpinner.Value += 9;
+        }
+    }
+
+    protected void ChanceBaseSpinner_OnDownButton()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            chanceBaseSpinner.Value -= 9;
+        }
+    }
+
+    protected void MagnitudeBaseMinSpinner_OnUpButton()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            magnitudeBaseMinSpinner.Value += 9;
+        }
+    }
+
+    protected void MagnitudeBaseMinSpinner_OnDownButton()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            magnitudeBaseMinSpinner.Value -= 9;
+        }
+    }
+
+    protected void MagnitudeBaseMaxSpinner_OnUpButton()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            magnitudeBaseMaxSpinner.Value += 9;
+        }
+    }
+
+    protected void MagnitudeBaseMaxSpinner_OnDownButton()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            magnitudeBaseMaxSpinner.Value -= 9;
+        }
     }
 
     #endregion
