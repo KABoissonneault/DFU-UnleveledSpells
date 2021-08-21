@@ -40,15 +40,37 @@ Since I was in the process of editing all the spells in the game, I also fixed i
 - Spell vendor now sells spells at the same cost as the equivalent spell created from the spellmaker. Before, it would do `gold cost = spell point cost * 4`, which means spells were cheaper the more skill you had. Spell vendor is still cheaper than the spellmaker since you can haggle for the price.
 - If you use the Hotkey Bar mod, you must update to 0.6 to avoid conflicts.
 
+0.2
+- Added (optional) constant spell point regeneration. Every round, some spell points will be recovered, depending on Willpower.
+- Holding SHIFT while changing Duration, Chance, or Magnitude in the Spellmaker will now increase/decrease the value by 10
+
 ## Compatibility
-- Mods that add new spells are not affected. I'd probably disable Roleplay & Realism: Items' "Skill-based starting spells" so your spellbook is not filled with leveled spells (ew!).
-- If you use Hotkey Bar, upgrade to 0.6 (or above)
+- Mods that add new spells are not affected. I'd probably disable **Roleplay & Realism: Items**'s "Skill-based starting spells" so your spellbook is not filled with leveled spells (ew!).
+- If you use **Hotkey Bar**, upgrade to 0.6 (or above)
 - Mods that change spells will be overwritten.
 - Can be used on an existing playthrough, but you must empty and refill your spellbook yourself
+- **Basic Magic Regen** must not be used with the spell point regeneration setting of this mod. Pick one.
+
+## Manual
+
+### Spell Effect Costs ###
+1. Download https://github.com/KABoissonneault/DFU-UnleveledSpells/blob/main/UnleveledSpells.ods
+2. Open in LibreOffice Calc
+3. Consult at leisure
+
+### Spell Effect Editor ###
+- Compared to vanilla, the "scaling" components have been removed from Duration, Chance, and Magnitude attributes. 
+- While holding SHIFT, increasing or decreasing the base value of any spell effect attribute will add or remove 10 instead of 1.
+
+### Spell point regeneration ###
+- Optional opt-in setting. Can be enabled and disabled during gameplay (see Mod Settings button at the top-left of the ESC menu)
+- Regenerate Willpower/12 spell points every round (ie: in-game minute)
+- Casting a spell will add a delay before the regeneration restarts
+- Unlike **BasicMagicRegen**, the rounding for "partial" spell point increases is deterministic, and does not depend on the Luck stat
+- This is slightly lower than **BasicMagicRegen**'s default settings
+
+### Enemy Spells ###
+See https://github.com/KABoissonneault/DFU-UnleveledSpells/blob/main/Scripts/UnleveledEnemySpells.cs
 
 ## Conclusion
 This is an early release, late-game balance hasn't even been tested (I'm working on it). All forms of feedback on all aspects of the mod are welcome. Please report any issue you see on the Nexus page, in the dfworkshop forums, or the Github.
-
-- Source code: https://github.com/KABoissonneault/DFU-UnleveledSpells
-- Enemy spells (before and after): https://github.com/KABoissonneault/DFU-UnleveledSpells/blob/main/Scripts/UnleveledEnemySpells.cs
-- Spell effect cost spreadsheet: https://github.com/KABoissonneault/DFU-UnleveledSpells/blob/main/UnleveledSpells.ods
