@@ -384,7 +384,7 @@ namespace UnleveledSpellsMod
         int CalculateSpellPointRecoveryRate(PlayerEntity player)
         {
             // Disable rest recovery if using real-time magic regen
-            if (magicRegen)
+            if (magicRegen.enabled || IsModEnabled("BasicMagicRegen"))
                 return 0;
 
             if (player.Career.NoRegenSpellPoints)
