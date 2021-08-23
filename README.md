@@ -44,6 +44,10 @@ Since I was in the process of editing all the spells in the game, I also fixed i
 - Added (optional) constant spell point regeneration. Every round, some spell points will be recovered, depending on Willpower.
 - Holding SHIFT while changing Duration, Chance, or Magnitude in the Spellmaker will now increase/decrease the value by 10
 
+0.2.1
+- Added magic school in spell effect descriptions
+- Fixed classic rest spell points recovery not being disabled while real-time magic regen is enabled
+
 ## Compatibility
 - Mods that add new spells are not affected. I'd probably disable **Roleplay & Realism: Items**'s "Skill-based starting spells" so your spellbook is not filled with leveled spells (ew!).
 - If you use **Hotkey Bar**, upgrade to 0.6 (or above)
