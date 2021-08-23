@@ -69,6 +69,7 @@ namespace UnleveledSpellsMod
             ParseCostOverrides();
 
             FormulaHelper.RegisterOverride<Func<IEntityEffect, EffectSettings, DaggerfallEntity, FormulaHelper.SpellCost>>(mod, "CalculateEffectCosts", CalculateEffectCosts);
+            FormulaHelper.RegisterOverride<Func<PlayerEntity, int>>(mod, "CalculateSpellPointRecoveryRate", CalculateSpellPointRecoveryRate);
 
             UIWindowFactory.RegisterCustomUIWindow(UIWindowType.EffectSettingsEditor, typeof(UnleveledSpellEffectEditor));
             UIWindowFactory.RegisterCustomUIWindow(UIWindowType.SpellBook, typeof(UnleveledSpellsSpellbookWindow));
@@ -379,5 +380,17 @@ namespace UnleveledSpellsMod
             return effectCost;
         }
         #endregion
+
+        int CalculateSpellPointRecoveryRate(PlayerEntity player)
+        {
+            // Disable rest recovery if using real-time magic regen
+            if (magicRegen)
+                return 0;
+
+            if (player.Career.NoRegenSpellPoints)
+                return 0;
+
+            return Mathf.Max((int)Mathf.Floor(player.MaxMagicka / 8), 1);
+        }
     }
 }
