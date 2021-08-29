@@ -1,17 +1,19 @@
 using UnityEngine;
+using DaggerfallWorkshop;
 using DaggerfallWorkshop.Game;
 using DaggerfallWorkshop.Game.Utility.ModSupport;
-using System.Collections.Generic;
-using DaggerfallWorkshop.Game.MagicAndEffects;
-using DaggerfallWorkshop.Game.Formulas;
-using System;
-using DaggerfallWorkshop.Game.Entity;
-using System.Linq;
-using DaggerfallConnect;
-using DaggerfallWorkshop.Game.UserInterfaceWindows;
-using DaggerfallWorkshop;
 using DaggerfallWorkshop.Game.Utility.ModSupport.ModSettings;
+using DaggerfallWorkshop.Game.UserInterfaceWindows;
+using DaggerfallWorkshop.Game.MagicAndEffects;
+using DaggerfallWorkshop.Game.MagicAndEffects.MagicEffects;
+using DaggerfallWorkshop.Game.Formulas;
+using DaggerfallWorkshop.Game.Entity;
+using DaggerfallConnect;
 using DaggerfallConnect.Arena2;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using DaggerfallWorkshop.Game.Serialization;
 
 namespace UnleveledSpellsMod
 {
@@ -22,15 +24,27 @@ namespace UnleveledSpellsMod
         public static UnleveledSpells Instance { get { return instance; } }
 
         private UnleveledMagicRegeneration magicRegen;
+        private bool unleveledOpenAndLock;
 
         private readonly Dictionary<string, EffectCosts> durationCostOverride = new Dictionary<string, EffectCosts>();
         private readonly Dictionary<string, EffectCosts> chanceCostOverride = new Dictionary<string, EffectCosts>();
         private readonly Dictionary<string, EffectCosts> magnitudeCostOverride = new Dictionary<string, EffectCosts>();
         private readonly Dictionary<string, float> factorOverride = new Dictionary<string, float>();
 
+        private readonly HashSet<string> suppressedOverrides = new HashSet<string>();
+
+        private readonly Dictionary<string, int> maxMagnitudeOverride = new Dictionary<string, int>();
+
         private EntityEffectBroker.OnNewMagicRoundEventHandler warningDelegate;
 
+        const string Core = "Core";
         const string MagicRegenSection = "MagicRegen";
+
+        #region Properties
+        public Dictionary<string, int> MaxMagnitudeOverride { get { return maxMagnitudeOverride; } }
+
+        public bool UnleveledOpenAndLock { get { return unleveledOpenAndLock; } }
+        #endregion
 
         [Invoke(StateManager.StateTypes.Start, 0)]
         public static void Init(InitParams initParams)
@@ -75,6 +89,8 @@ namespace UnleveledSpellsMod
             UIWindowFactory.RegisterCustomUIWindow(UIWindowType.SpellBook, typeof(UnleveledSpellsSpellbookWindow));
 
             DaggerfallUnity.Instance.TextProvider = new UnleveledSpellsTextProvider(DaggerfallUnity.Instance.TextProvider);
+
+            StateManager.OnStartNewGame += OnStartNewGame;
 
             // Fix IK's Mage Light -- Inferno :)
             try
@@ -143,6 +159,40 @@ namespace UnleveledSpellsMod
                     instance.warningDelegate = null;
                 }
             }
+
+            instance.unleveledOpenAndLock = modSettings.GetBool(Core, "UnleveledOpenAndLock");
+            if (instance.unleveledOpenAndLock)
+            {
+                instance.maxMagnitudeOverride.Add(Lock.EffectKey, 20);
+                instance.maxMagnitudeOverride.Add(Open.EffectKey, 20);
+
+                GameManager.Instance.EntityEffectBroker.RegisterEffectTemplate(new UnleveledOpen(), true);
+                GameManager.Instance.EntityEffectBroker.RegisterEffectTemplate(new UnleveledLock(), true);
+
+                instance.suppressedOverrides.Add(Lock.EffectKey);
+                instance.suppressedOverrides.Add(Open.EffectKey);
+
+                if(GameManager.Instance.StateManager.GameInProgress)
+                {
+                    AdjustOpenLockSpells();
+                }
+            }
+            else
+            {
+                instance.maxMagnitudeOverride.Remove(Lock.EffectKey);
+                instance.maxMagnitudeOverride.Remove(Open.EffectKey);
+
+                GameManager.Instance.EntityEffectBroker.RegisterEffectTemplate(new Open(), true);
+                GameManager.Instance.EntityEffectBroker.RegisterEffectTemplate(new Lock(), true);
+
+                instance.suppressedOverrides.Remove(Lock.EffectKey);
+                instance.suppressedOverrides.Remove(Open.EffectKey);
+
+                if (GameManager.Instance.StateManager.GameInProgress)
+                {
+                    AdjustOpenLockSpells();
+                }
+            }
         }
 
         static bool IsModEnabled(string modName)
@@ -166,18 +216,22 @@ namespace UnleveledSpellsMod
                 string[] tokens = line.Split(';');
                 string key = tokens[0];
 
+                // If all the tokens are empty, don't set override
+                if (tokens.Skip(1).All(token => string.IsNullOrEmpty(token)))
+                    continue;
+
                 // Duration override
                 if (tokens.Length >= 4 && !string.IsNullOrEmpty(tokens[1]))
                 {
                     EffectCosts effectCosts = new EffectCosts();
-                    effectCosts.CostA = int.Parse(tokens[1]);
+                    effectCosts.CostA = float.Parse(tokens[1]);
 
-                    if (int.TryParse(tokens[2], out int costB))
+                    if (float.TryParse(tokens[2], out float costB))
                     {
                         effectCosts.CostB = costB;
                     }
 
-                    if (int.TryParse(tokens[3], out int offsetGold))
+                    if (float.TryParse(tokens[3], out float offsetGold))
                     {
                         effectCosts.OffsetGold = offsetGold;
                     }
@@ -189,14 +243,14 @@ namespace UnleveledSpellsMod
                 if (tokens.Length >= 7 && !string.IsNullOrEmpty(tokens[4]))
                 {
                     EffectCosts effectCosts = new EffectCosts();
-                    effectCosts.CostA = int.Parse(tokens[4]);
+                    effectCosts.CostA = float.Parse(tokens[4]);
 
-                    if (int.TryParse(tokens[5], out int costB))
+                    if (float.TryParse(tokens[5], out float costB))
                     {
                         effectCosts.CostB = costB;
                     }
 
-                    if (int.TryParse(tokens[6], out int offsetGold))
+                    if (float.TryParse(tokens[6], out float offsetGold))
                     {
                         effectCosts.OffsetGold = offsetGold;
                     }
@@ -208,14 +262,14 @@ namespace UnleveledSpellsMod
                 if (tokens.Length >= 10 && !string.IsNullOrEmpty(tokens[7]))
                 {
                     EffectCosts effectCosts = new EffectCosts();
-                    effectCosts.CostA = int.Parse(tokens[7]);
+                    effectCosts.CostA = float.Parse(tokens[7]);
 
-                    if (int.TryParse(tokens[8], out int costB))
+                    if (float.TryParse(tokens[8], out float costB))
                     {
                         effectCosts.CostB = costB;
                     }
 
-                    if (int.TryParse(tokens[9], out int offsetGold))
+                    if (float.TryParse(tokens[9], out float offsetGold))
                     {
                         effectCosts.OffsetGold = offsetGold;
                     }
@@ -243,7 +297,7 @@ namespace UnleveledSpellsMod
 
         private FormulaHelper.SpellCost CalculateEffectCosts(IEntityEffect effect, EffectSettings settings, DaggerfallEntity casterEntity)
         {
-            if (factorOverride.TryGetValue(effect.Key, out float factor))
+            if (!suppressedOverrides.Contains(effect.Key) && factorOverride.TryGetValue(effect.Key, out float factor))
             {
                 float durationFactor = 1;
                 if (effect.Properties.SupportDuration)
@@ -301,7 +355,7 @@ namespace UnleveledSpellsMod
             if (effect.Properties.SupportDuration)
             {
                 EffectCosts durationCost = effect.Properties.DurationCosts;
-                if (durationCostOverride.TryGetValue(effect.Key, out EffectCosts costOverride))
+                if (!suppressedOverrides.Contains(effect.Key) && durationCostOverride.TryGetValue(effect.Key, out EffectCosts costOverride))
                 {
                     durationCost = costOverride;
                 }
@@ -319,7 +373,7 @@ namespace UnleveledSpellsMod
             if (effect.Properties.SupportChance)
             {
                 EffectCosts chanceCosts = effect.Properties.ChanceCosts;
-                if (chanceCostOverride.TryGetValue(effect.Key, out EffectCosts costOverride))
+                if (!suppressedOverrides.Contains(effect.Key) && chanceCostOverride.TryGetValue(effect.Key, out EffectCosts costOverride))
                 {
                     chanceCosts = costOverride;
                 }
@@ -337,7 +391,7 @@ namespace UnleveledSpellsMod
             if (effect.Properties.SupportMagnitude)
             {
                 EffectCosts magnitudeCosts = effect.Properties.MagnitudeCosts;
-                if (magnitudeCostOverride.TryGetValue(effect.Key, out EffectCosts costOverride))
+                if (!suppressedOverrides.Contains(effect.Key) && magnitudeCostOverride.TryGetValue(effect.Key, out EffectCosts costOverride))
                 {
                     magnitudeCosts = costOverride;
                 }
@@ -392,5 +446,156 @@ namespace UnleveledSpellsMod
 
             return Mathf.Max((int)Mathf.Floor(player.MaxMagicka / 8), 1);
         }
+
+        static void OnStartNewGame(object sender, EventArgs e)
+        {
+            AdjustOpenLockSpells();
+        }
+
+        static void AdjustOpenLockSpells()
+        {
+            var Player = GameManager.Instance.PlayerEntity;
+
+            if (instance.UnleveledOpenAndLock)
+            {
+                for (int i = 0; i < Player.SpellbookCount(); ++i)
+                {
+                    Player.GetSpell(i, out EffectBundleSettings spell);
+                    if (spell.Effects.Any(
+                        effect =>
+                             (effect.Key == Open.EffectKey || effect.Key == Lock.EffectKey)
+                             && effect.Settings.MagnitudeBaseMin <= 1 && effect.Settings.MagnitudeBaseMax <= 1
+                        ))
+                    {
+                        Player.SetSpell(i, ToUnleveledOpenAndLock(spell));
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < Player.SpellbookCount(); ++i)
+                {
+                    Player.GetSpell(i, out EffectBundleSettings spell);
+                    if (spell.Effects.Any(
+                        effect =>
+                             (effect.Key == Open.EffectKey || effect.Key == Lock.EffectKey)
+                             && (effect.Settings.MagnitudeBaseMin > 1 || effect.Settings.MagnitudeBaseMax > 1)
+                        ))
+                    {
+                        Player.SetSpell(i, ToLeveledOpenAndLock(spell));
+                    }
+                }
+            }
+        }
+
+        static EffectBundleSettings ToUnleveledOpenAndLock(EffectBundleSettings spell)
+        {
+            EffectBundleSettings newBundle = new EffectBundleSettings();
+            newBundle.Version = spell.Version;
+            newBundle.BundleType = spell.BundleType;
+            newBundle.TargetType = spell.TargetType;
+            newBundle.ElementType = spell.ElementType;
+            newBundle.Name = spell.Name;
+            newBundle.IconIndex = spell.IconIndex;
+            newBundle.Icon = spell.Icon;
+            newBundle.ElementType = spell.ElementType;
+            newBundle.MinimumCastingCost = spell.MinimumCastingCost;
+            newBundle.NoCastingAnims = spell.NoCastingAnims;
+            newBundle.Tag = spell.Tag;
+
+            newBundle.Effects = new EffectEntry[spell.Effects.Length];
+            for (int i = 0; i < newBundle.Effects.Length; ++i)
+            {
+                ref var originalEffect = ref spell.Effects[i];
+                if (originalEffect.Key == Open.EffectKey || originalEffect.Key == Lock.EffectKey)
+                {
+                    float originalLevel = originalEffect.Settings.ChanceBase / 5.0f;
+                    
+                    ref var newEffect = ref newBundle.Effects[i];
+                    newEffect.Key = originalEffect.Key;
+
+                    // Transfer the chance values for recovery later
+                    newEffect.Settings.ChanceBase = originalEffect.Settings.ChanceBase;
+                    newEffect.Settings.ChancePlus = originalEffect.Settings.ChancePlus;
+                    newEffect.Settings.ChancePerLevel = originalEffect.Settings.ChancePerLevel;
+
+                    if(originalLevel < 5)
+                    {
+                        originalLevel = GameManager.Instance.PlayerEntity.Level;
+                    }
+
+                    if (originalLevel < 5)
+                    {
+                        newEffect.Settings.MagnitudeBaseMin = 3;
+                        newEffect.Settings.MagnitudeBaseMax = 7;
+                    }
+                    else
+                    {
+                        newEffect.Settings.MagnitudeBaseMin = Math.Min(Mathf.RoundToInt(originalLevel) - 2, 20);
+                        newEffect.Settings.MagnitudeBaseMax = Mathf.Min(Mathf.RoundToInt(originalLevel) + 2, 20);
+                    }
+                    newEffect.Settings.MagnitudePerLevel = 1;
+                }
+                else
+                {
+                    newBundle.Effects[i] = originalEffect;
+                }
+            }
+
+            return newBundle;
+        }
+
+        static EffectBundleSettings ToLeveledOpenAndLock(EffectBundleSettings spell)
+        {
+            EffectBundleSettings newBundle = new EffectBundleSettings();
+            newBundle.Version = spell.Version;
+            newBundle.BundleType = spell.BundleType;
+            newBundle.TargetType = spell.TargetType;
+            newBundle.ElementType = spell.ElementType;
+            newBundle.Name = spell.Name;
+            newBundle.IconIndex = spell.IconIndex;
+            newBundle.Icon = spell.Icon;
+            newBundle.ElementType = spell.ElementType;
+            newBundle.MinimumCastingCost = spell.MinimumCastingCost;
+            newBundle.NoCastingAnims = spell.NoCastingAnims;
+            newBundle.Tag = spell.Tag;
+
+            newBundle.Effects = new EffectEntry[spell.Effects.Length];
+            for (int i = 0; i < newBundle.Effects.Length; ++i)
+            {
+                ref var originalEffect = ref spell.Effects[i];
+                if (originalEffect.Key == Open.EffectKey || originalEffect.Key == Lock.EffectKey)
+                {
+                    float originalLevel = (originalEffect.Settings.MagnitudeBaseMin + originalEffect.Settings.MagnitudeBaseMax) / 2.0f;
+
+                    ref var newEffect = ref newBundle.Effects[i];
+                    newEffect.Key = originalEffect.Key;
+
+                    if (originalLevel < 5)
+                    {
+                        originalLevel = GameManager.Instance.PlayerEntity.Level;
+                    }
+
+                    // Recover the original values if available
+                    if (originalEffect.Settings.ChanceBase > 1)
+                    {
+                        newEffect.Settings.ChanceBase = originalEffect.Settings.ChanceBase;
+                    }
+                    else
+                    {
+                        newEffect.Settings.ChanceBase = Mathf.Max(Mathf.RoundToInt(originalLevel * 5), 25);
+                    }
+                    newEffect.Settings.ChancePerLevel = 1;
+                }
+                else
+                {
+                    newBundle.Effects[i] = originalEffect;
+                }
+            }
+
+            return newBundle;
+        }
     }
+
+    
 }
