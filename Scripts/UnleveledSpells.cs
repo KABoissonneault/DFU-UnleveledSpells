@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using DaggerfallWorkshop.Game.Serialization;
+using DaggerfallWorkshop.Game.Utility;
 
 namespace UnleveledSpellsMod
 {
@@ -90,7 +91,8 @@ namespace UnleveledSpellsMod
 
             DaggerfallUnity.Instance.TextProvider = new UnleveledSpellsTextProvider(DaggerfallUnity.Instance.TextProvider);
 
-            StateManager.OnStartNewGame += OnStartNewGame;
+            StateManager.OnStartNewGame += OnGameStarted;
+            StartGameBehaviour.OnStartGame += OnNewGameStarted;
 
             // Fix IK's Mage Light -- Inferno :)
             try
@@ -447,7 +449,7 @@ namespace UnleveledSpellsMod
             return Mathf.Max((int)Mathf.Floor(player.MaxMagicka / 8), 1);
         }
 
-        static void OnStartNewGame(object sender, EventArgs e)
+        static void OnGameStarted(object sender, EventArgs e)
         {
             AdjustOpenLockSpells();
         }
@@ -592,6 +594,124 @@ namespace UnleveledSpellsMod
                     newBundle.Effects[i] = originalEffect;
                 }
             }
+
+            return newBundle;
+        }
+
+        static void OnNewGameStarted(object sender, EventArgs e)
+        {
+            var RRI = ModManager.Instance.GetMod("RoleplayRealism-Items");
+            if (RRI == null)
+                return;
+
+            if(RRI.GetSettings().GetBool("Modules", "skillBasedStartingSpells"))
+            {
+                var Player = GameManager.Instance.PlayerEntity;
+
+                for(int i = 0; i < Player.SpellbookCount(); ++i)
+                {
+                    Player.GetSpell(i, out EffectBundleSettings spell);
+                    switch(spell.Name)
+                    {
+                        case "Minor Shock":
+                            Player.SetSpell(i, DuplicateWithEffect(spell, new EffectSettings()
+                            {
+                                // 2-10 + 1-2 / Lvl = 3-12 at level 1
+                                MagnitudeBaseMin = 3,
+                                MagnitudeBaseMax = 12,
+                            }));
+                            break;
+
+                        case "Arcane Arrow":
+                            Player.SetSpell(i, DuplicateWithEffect(spell, new EffectSettings()
+                            {
+                                // 5-6 + 1-1 / 2 Lvl = 5-6 at level 1
+                                MagnitudeBaseMin = 5,
+                                MagnitudeBaseMax = 6,
+                            }));
+                            break;
+
+                        case "Gentle Fall":
+                            Player.SetSpell(i, DuplicateWithEffect(spell, new EffectSettings()
+                            {
+                                // 2 + 1 / 2 Lvl = 2 at level 1
+                                DurationBase = 2,
+                            }));
+                            break;
+
+                        case "Candle":
+                            Player.SetSpell(i, DuplicateWithEffect(spell, new EffectSettings()
+                            {
+                                // 4 + 4 / Lvl = 8 at level 1
+                                DurationBase = 8,
+                            }));
+                            break;
+
+                        case "Knick-Knack":
+                            Player.SetSpell(i, DuplicateWithEffect(spell, new EffectSettings()
+                            {
+                                // 4 + 1 / 2 Lvl = 4 at level 1
+                                DurationBase = 4,
+                            }));
+                            break;
+
+                        // "Salve Bruise" already unleveled
+                        // "Smelling Salts Bruise" already unleveled
+
+                        case "Rise":
+                            Player.SetSpell(i, DuplicateWithEffect(spell, new EffectSettings()
+                            {
+                                // 1 + 1 / 2 Lvl = 1 at level 1
+                                // Let's pretend it's level 2 then
+                                DurationBase = 2,
+                            }));
+                            break;
+
+                        case "Knock":
+                            // Use magnitude instead of chance
+                            if(instance.unleveledOpenAndLock)
+                            {
+                                // Give level 3 effect
+                                Player.SetSpell(i, DuplicateWithEffect(spell, new EffectSettings()
+                                {
+                                    MagnitudeBaseMin = 1,
+                                    MagnitudeBaseMax = 5,
+                                }));
+                            }
+                            else
+                            {
+                                // 8% + 2% per level = 10% at level 1
+                                Player.SetSpell(i, DuplicateWithEffect(spell, new EffectSettings()
+                                {
+                                    ChanceBase = 10,
+                                }));
+                            }
+
+                            break;
+
+                    }
+                }
+            }
+        }
+
+        static EffectBundleSettings DuplicateWithEffect(EffectBundleSettings spell, EffectSettings newSettings)
+        {
+            EffectBundleSettings newBundle = new EffectBundleSettings();
+            newBundle.Name = spell.Name;
+            newBundle.Version = spell.Version;
+            newBundle.BundleType = spell.BundleType;
+            newBundle.TargetType = spell.TargetType;
+            newBundle.ElementType = spell.ElementType;
+            newBundle.IconIndex = spell.IconIndex;
+            newBundle.Icon = spell.Icon;
+
+            newBundle.Effects = new EffectEntry[1];
+            newBundle.Effects[0].Key = spell.Effects[0].Key;
+            newBundle.Effects[0].Settings = newSettings;
+
+            newBundle.Effects[0].Settings.DurationPerLevel = 1;
+            newBundle.Effects[0].Settings.ChancePerLevel = 1;
+            newBundle.Effects[0].Settings.MagnitudePerLevel = 1;
 
             return newBundle;
         }
