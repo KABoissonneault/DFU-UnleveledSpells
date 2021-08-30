@@ -656,7 +656,7 @@ namespace UnleveledSpellsMod
                             break;
 
                         // "Salve Bruise" already unleveled
-                        // "Smelling Salts Bruise" already unleveled
+                        // "Smelling Salts" already unleveled
 
                         case "Rise":
                             Player.SetSpell(i, DuplicateWithEffect(spell, new EffectSettings()
