@@ -161,16 +161,25 @@ namespace UnleveledSpellsMod
 
             string[] lines = costsFile.text.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
 
-            foreach (string line in lines.Skip(1))
+            for (int i = 1; i < lines.Length; ++i)
             {
+                string line = lines[i];
                 string[] tokens = line.Split(';');
                 string key = tokens[0];
 
                 // Duration override
-                if (tokens.Length >= 4 && !string.IsNullOrEmpty(tokens[1]))
+                if (tokens.Length >= 4 && !string.IsNullOrEmpty(tokens[1]) && !string.IsNullOrWhiteSpace(tokens[1]))
                 {
                     EffectCosts effectCosts = new EffectCosts();
-                    effectCosts.CostA = int.Parse(tokens[1]);
+                    try
+                    {
+                        effectCosts.CostA = int.Parse(tokens[1]);
+                    }
+                    catch(Exception e)
+                    {
+                        Debug.LogError($"Failed while parsing token 1='{tokens[1]}' at line {i}");
+                        throw e;
+                    }
 
                     if (int.TryParse(tokens[2], out int costB))
                     {
@@ -186,10 +195,19 @@ namespace UnleveledSpellsMod
                 }
 
                 // Chance override
-                if (tokens.Length >= 7 && !string.IsNullOrEmpty(tokens[4]))
+                if (tokens.Length >= 7 && !string.IsNullOrEmpty(tokens[4]) && !string.IsNullOrWhiteSpace(tokens[4]))
                 {
                     EffectCosts effectCosts = new EffectCosts();
-                    effectCosts.CostA = int.Parse(tokens[4]);
+
+                    try
+                    { 
+                        effectCosts.CostA = int.Parse(tokens[4]);
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError($"Failed while parsing token 4='{tokens[4]}' at line {i}");
+                        throw e;
+                    }
 
                     if (int.TryParse(tokens[5], out int costB))
                     {
@@ -205,10 +223,19 @@ namespace UnleveledSpellsMod
                 }
 
                 // Magnitude override
-                if (tokens.Length >= 10 && !string.IsNullOrEmpty(tokens[7]))
+                if (tokens.Length >= 10 && !string.IsNullOrEmpty(tokens[7]) && !string.IsNullOrWhiteSpace(tokens[7]))
                 {
                     EffectCosts effectCosts = new EffectCosts();
-                    effectCosts.CostA = int.Parse(tokens[7]);
+
+                    try
+                    {
+                        effectCosts.CostA = int.Parse(tokens[7]);
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError($"Failed while parsing token 7='{tokens[7]}' at line {i}");
+                        throw e;
+                    }                    
 
                     if (int.TryParse(tokens[8], out int costB))
                     {
@@ -224,9 +251,17 @@ namespace UnleveledSpellsMod
                 }
 
                 // Formula override
-                if (tokens.Length >= 11 && !string.IsNullOrEmpty(tokens[10]))
+                if (tokens.Length >= 11 && !string.IsNullOrEmpty(tokens[10]) && !string.IsNullOrWhiteSpace(tokens[10]))
                 {
-                    factorOverride.Add(key, float.Parse(tokens[10]));
+                    try
+                    {
+                        factorOverride.Add(key, float.Parse(tokens[10]));
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError($"Failed while parsing token 10='{tokens[10]}' at line {i}");
+                        throw e;
+                    }
                 }
             }
         }
