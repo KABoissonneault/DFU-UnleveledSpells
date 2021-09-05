@@ -10,9 +10,13 @@
             {
                 "type": 16,
                 "subType": -1,
-                "chanceBase": 50,
-                "chanceMod": 0,
+                "chanceBase": 25,
                 "chancePerLevel": 1
+                "magnitudeBaseLow": 3,
+                "magnitudeBaseHigh": 7,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
             }
         ]
     },
@@ -325,9 +329,14 @@
             {
                 "type": 17,
                 "subType": -1,
-                "chanceBase": 35,
+                "chanceBase": 25,
                 "chanceMod": 0,
                 "chancePerLevel": 1
+                "magnitudeBaseLow": 3,
+                "magnitudeBaseHigh": 7,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
             }
         ]
     },
@@ -342,9 +351,14 @@
             {
                 "type": 16,
                 "subType": -1,
-                "chanceBase": 100,
+                "chanceBase": 50,
                 "chanceMod": 0,
                 "chancePerLevel": 1
+                "magnitudeBaseLow": 8,
+                "magnitudeBaseHigh": 12,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
             }
         ]
     },
@@ -1654,6 +1668,27 @@
                 "subType": 0,
                 "magnitudeBaseLow": 64,
                 "magnitudeBaseHigh": 88,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "index": 114,
+        "spellName": "Fenrik's Lockpick",
+        "element": 4,
+        "rangeType": 0,
+        "icon": 2,
+        "effects": [
+            {
+                "type": 17,
+                "subType": -1,
+                "chanceBase": 50,
+                "chanceMod": 0,
+                "chancePerLevel": 1
+                "magnitudeBaseLow": 8,
+                "magnitudeBaseHigh": 12,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
