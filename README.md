@@ -48,8 +48,16 @@ Since I was in the process of editing all the spells in the game, I also fixed i
 - Added magic school in spell effect descriptions
 - Fixed classic rest spell points recovery not being disabled while real-time magic regen is enabled
 
+0.2.2
+- Reupload because 0.2.1 didn't work
+
+0.2.3
+- Fixed Linux launch issue
+- Made Open and Lock spells unleveled. Chance to cast is replaced with a Magnitude value. If your Open spell is 3-7, and the door has a lock level of 5, you have 60% chance to open it, and 40% chance to fail. Spells with fixed value, say Magnitude: 5-5, are more reliable, but cannot open locks as strong (3-7 has 20% chance to open a level 7 lock).
+- Added "spell migration" system. When a mod compatibility is detected, or when the Unleveled Spells settings are changed, your spellbook will be modified to take this into account. Mod compatibility migrations only occur on new characters. Settings migrations can be done at any time, even during gameplay.
+- Added compatibility with Roleplay&Realism: Items' setting "skillBasedStartingSpells". All your new skill-based starting spells will be modified, when creating a new character, to have their fixed level 1-3 strength, depending on the spell. 
+
 ## Compatibility
-- Mods that add new spells are not affected. I'd probably disable **Roleplay & Realism: Items**'s "Skill-based starting spells" so your spellbook is not filled with leveled spells (ew!).
 - If you use **Hotkey Bar**, upgrade to 0.6 (or above)
 - Mods that change spells will be overwritten.
 - Can be used on an existing playthrough, but you must empty and refill your spellbook yourself
@@ -76,5 +84,9 @@ Since I was in the process of editing all the spells in the game, I also fixed i
 ### Enemy Spells ###
 See https://github.com/KABoissonneault/DFU-UnleveledSpells/blob/main/Scripts/UnleveledEnemySpells.cs
 
+### Spell Migration
+- If you toggle on or off the "Unleveled Open and Lock" setting, your spells with Open and Lock effects will be updated to reflect the setting
+- If you start a playthrough with Roleplay&Realism: Items' "skill-based starting spells", your new spells will be made unleveled
+
 ## Conclusion
-This is an early release, late-game balance hasn't even been tested (I'm working on it). All forms of feedback on all aspects of the mod are welcome. Please report any issue you see on the Nexus page, in the dfworkshop forums, or the Github.
+This is a pretty stable early release, most feedback has been positive so far. All forms of feedback, on any aspect of the mod, are welcome. Please report any issue you see on the Nexus page, in the dfworkshop forums, the Github, or directly on Discord.

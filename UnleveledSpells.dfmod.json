@@ -1,9 +1,9 @@
 {
     "ModTitle": "Unleveled Spells",
-    "ModVersion": "0.2.2",
+    "ModVersion": "0.2.3",
     "ModAuthor": "kaboissonneault",
     "ContactInfo": "kaboissonneault@gmail.com",
-    "DFUnity_Version": "0.12.0",
+    "DFUnity_Version": "0.12.3",
     "ModDescription": "Removes the level-scaling components from spells and enchanted items",
     "GUID": "eb8c0317-b8ab-4679-bf61-1eaaff77a1f3",
     "Files": [
@@ -17,7 +17,9 @@
         "Assets/Game/Mods/UnleveledSpells/Scripts/UnleveledSpellsSpellbookWindow.cs",
         "Assets/Game/Mods/UnleveledSpells/Scripts/UnleveledEnemySpells.cs",
         "Assets/Game/Mods/UnleveledSpells/Scripts/UnleveledMagicRegeneration.cs",
-        "Assets/Game/Mods/UnleveledSpells/modsettings.json"
+        "Assets/Game/Mods/UnleveledSpells/modsettings.json",
+        "Assets/Game/Mods/UnleveledSpells/Scripts/Effects/UnleveledOpen.cs",
+        "Assets/Game/Mods/UnleveledSpells/Scripts/Effects/UnleveledLock.cs"
     ],
     "Dependencies": [
         {
