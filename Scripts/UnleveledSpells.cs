@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DaggerfallWorkshop.Game.Serialization;
 using DaggerfallWorkshop.Game.Utility;
+using System.Globalization;
 
 namespace UnleveledSpellsMod
 {
@@ -212,6 +213,7 @@ namespace UnleveledSpellsMod
                 return;
 
             string[] lines = costsFile.text.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+            CultureInfo cultureInfo = new CultureInfo("en-US");
 
             for (int i = 1; i < lines.Length; ++i)
             {
@@ -228,8 +230,8 @@ namespace UnleveledSpellsMod
                 {
                     EffectCosts effectCosts = new EffectCosts();
                     try
-                    {
-                    	effectCosts.CostA = float.Parse(tokens[1]);
+                    {                        
+                    	effectCosts.CostA = float.Parse(tokens[1], cultureInfo);
                     }
                     catch(Exception e)
                     {
@@ -237,12 +239,12 @@ namespace UnleveledSpellsMod
                         throw e;
                     }
 
-                    if (float.TryParse(tokens[2], out float costB))
+                    if (float.TryParse(tokens[2], NumberStyles.Float, cultureInfo, out float costB))
                     {
                         effectCosts.CostB = costB;
                     }
 
-                    if (float.TryParse(tokens[3], out float offsetGold))
+                    if (float.TryParse(tokens[3], NumberStyles.Float, cultureInfo, out float offsetGold))
                     {
                         effectCosts.OffsetGold = offsetGold;
                     }
@@ -257,7 +259,7 @@ namespace UnleveledSpellsMod
 
                     try
                     { 
-                    	effectCosts.CostA = float.Parse(tokens[4]);
+                    	effectCosts.CostA = float.Parse(tokens[4], cultureInfo);
                     }
                     catch (Exception e)
                     {
@@ -265,12 +267,12 @@ namespace UnleveledSpellsMod
                         throw e;
                     }
 
-                    if (float.TryParse(tokens[5], out float costB))
+                    if (float.TryParse(tokens[5], NumberStyles.Float, cultureInfo, out float costB))
                     {
                         effectCosts.CostB = costB;
                     }
 
-                    if (float.TryParse(tokens[6], out float offsetGold))
+                    if (float.TryParse(tokens[6], NumberStyles.Float, cultureInfo, out float offsetGold))
                     {
                         effectCosts.OffsetGold = offsetGold;
                     }
@@ -285,7 +287,7 @@ namespace UnleveledSpellsMod
 
                     try
                     {
-                    	effectCosts.CostA = float.Parse(tokens[7]);
+                    	effectCosts.CostA = float.Parse(tokens[7], cultureInfo);
                     }
                     catch (Exception e)
                     {
@@ -293,12 +295,12 @@ namespace UnleveledSpellsMod
                         throw e;
                     }                    
 
-                    if (float.TryParse(tokens[8], out float costB))
+                    if (float.TryParse(tokens[8], NumberStyles.Float, cultureInfo, out float costB))
                     {
                         effectCosts.CostB = costB;
                     }
 
-                    if (float.TryParse(tokens[9], out float offsetGold))
+                    if (float.TryParse(tokens[9], NumberStyles.Float, cultureInfo, out float offsetGold))
                     {
                         effectCosts.OffsetGold = offsetGold;
                     }
@@ -311,7 +313,7 @@ namespace UnleveledSpellsMod
                 {
                     try
                     {
-                        factorOverride.Add(key, float.Parse(tokens[10]));
+                        factorOverride.Add(key, float.Parse(tokens[10], cultureInfo));
                     }
                     catch (Exception e)
                     {
