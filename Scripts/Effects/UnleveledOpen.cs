@@ -76,5 +76,25 @@ namespace UnleveledSpellsMod
             // Expire effect once door activated
             CancelEffect();
         }
+
+        public override bool TriggerExteriorOpenEffect(int buildingLockValue)
+        {
+            if (castBySkeletonKey || buildingLockValue <= GetMagnitude(caster))
+            {
+                return true;
+            }
+            else
+            {
+                if (buildingLockValue <= settings.MagnitudeBaseMax)
+                {
+                    DaggerfallUI.AddHUDText(TextManager.Instance.GetLocalizedText("lockpickingFailure"), 1.5f);
+                }
+                else
+                {
+                    DaggerfallUI.AddHUDText(TextManager.Instance.GetLocalizedText("openFailed"), 1.5f);
+                }
+                return false;
+            }
+        }
     }
 }
