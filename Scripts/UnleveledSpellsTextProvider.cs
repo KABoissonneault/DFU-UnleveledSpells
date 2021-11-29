@@ -845,9 +845,11 @@ namespace UnleveledSpellsMod
                     "Comprehend Languages",
                     "Mysticism",
                     "Duration: %bdr round(s)",
+                    "Chance: %bch%",
                     "\"Caster can comprehend any written or spoken tongue,",
                     "easing diplomacy with all sorts of creatures.",
-                    "The spell lasts for %bdr round(s).\""
+                    "The spell lasts for %bdr round(s), and increases odds",
+                    "of successful pacification by %bch% (additive).\""
                     );
 
                 case 1502: return CreateTokens(TextFile.Formatting.JustifyCenter,
@@ -1680,7 +1682,7 @@ namespace UnleveledSpellsMod
                     "Caster can comprehend any written or spoken tongue,",
                     "easing diplomacy with all sorts of creatures.",
                     "Duration: How long the caster comprehends languages.",
-                    "Chance: N/A",
+                    "Chance: Additive increase in pacification odds",
                     "Magnitude: N/A"
                     );
             }
