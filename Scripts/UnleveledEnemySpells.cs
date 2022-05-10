@@ -320,12 +320,15 @@ namespace UnleveledSpellsMod
                 enemyEntity.DeleteSpell(enemyEntity.SpellbookCount() - 1);
 
             // Assign new
-            if (enemyEntity.EntityType == EntityTypes.EnemyClass && (enemyEntity.MobileEnemy.CastsMagic))
+            if (enemyEntity.EntityType == EntityTypes.EnemyClass)
             {
-                int spellListLevel = enemyEntity.Level / 3;
-                if (spellListLevel > 6)
-                    spellListLevel = 6;
-                enemyEntity.SetEnemySpells(EnemyClassSpells[spellListLevel]);
+                if (enemyEntity.MobileEnemy.CastsMagic)
+                {
+                    int spellListLevel = enemyEntity.Level / 3;
+                    if (spellListLevel > 6)
+                        spellListLevel = 6;
+                    enemyEntity.SetEnemySpells(EnemyClassSpells[spellListLevel]);
+                }
             }
             else
             {

@@ -1,9 +1,9 @@
 {
     "ModTitle": "Unleveled Spells",
-    "ModVersion": "0.2.4",
+    "ModVersion": "0.2.5",
     "ModAuthor": "kaboissonneault",
     "ContactInfo": "kaboissonneault@gmail.com",
-    "DFUnity_Version": "0.12.3",
+    "DFUnity_Version": "0.13.5",
     "ModDescription": "Removes the level-scaling components from spells and enchanted items",
     "GUID": "eb8c0317-b8ab-4679-bf61-1eaaff77a1f3",
     "Files": [
