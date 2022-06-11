@@ -1,5 +1,6 @@
 using DaggerfallWorkshop;
 using DaggerfallWorkshop.Game.Entity;
+using System;
 using UnityEngine;
 
 
@@ -309,10 +310,22 @@ namespace UnleveledSpellsMod
         // Before: Spider Touch (100% for 13 rounds)
         // After: Spider Touch (35% for 3 rounds)
 
+        static bool HasCustomSpells(EnemyEntity e)
+        {
+            // Only support baseline enemies for now
+            if (!Enum.IsDefined(typeof(MobileTypes), e.MobileEnemy.ID))
+                return false;
+
+            return true;
+        }
+
         public static void OnEnemySpawned(object sender, EnemyLootSpawnedEventArgs args)
         {
             var enemyEntity = sender as EnemyEntity;
             if (enemyEntity == null)
+                return;
+
+            if (!HasCustomSpells(enemyEntity))
                 return;
 
             // Reset spells
