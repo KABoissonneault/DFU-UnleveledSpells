@@ -1195,7 +1195,7 @@
                 "durationBase": 3,
                 "durationMod": 0,
                 "durationPerLevel": 1,
-                "chanceBase": 100,
+                "chanceBase": 65,
                 "chanceMod": 0,
                 "chancePerLevel": 1
             }
