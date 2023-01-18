@@ -866,7 +866,7 @@ namespace UnleveledSpellsMod
                     "Destruction",
                     "Lowers target's Health each round.",
                     "Duration: How many rounds target takes damage.",
-                    "Chance: Chance: N/A",
+                    "Chance: N/A",
                     "Magnitude: How much damage target takes per round."
                     );
 
@@ -875,7 +875,7 @@ namespace UnleveledSpellsMod
                     "Destruction",
                     "Lowers target's Fatigue each round.",
                     "Duration: How many rounds target takes damage.",
-                    "Chance: Chance: N/A",
+                    "Chance: N/A",
                     "Magnitude: Amount of Fatigue loss to target per round."
                     );
 
@@ -884,7 +884,7 @@ namespace UnleveledSpellsMod
                     "Destruction",
                     "Lowers target's Spell Points each round.",
                     "Duration: How many rounds target takes damage.",
-                    "Chance: Chance: N/A",
+                    "Chance: N/A",
                     "Magnitude: Amount of Spell Points target loses per round."
                     );
 
