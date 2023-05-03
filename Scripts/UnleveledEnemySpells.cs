@@ -223,7 +223,7 @@ namespace UnleveledSpellsMod
 
         static byte[] AncientLichSpells = // Level 21
         {
-            0x6F, // Daedroth Lightning (55-79)
+            0x73, // Ancient Shock (55-79 | 65% paralyze 3 rounds)
             0x0A, // Free Action
             0x0E, // Fireball (52-85)
             0x71, // Ancient Toxic Cloud (62-86)

@@ -11,7 +11,7 @@
                 "type": 16,
                 "subType": -1,
                 "chanceBase": 25,
-                "chancePerLevel": 1
+                "chancePerLevel": 1,
                 "magnitudeBaseLow": 3,
                 "magnitudeBaseHigh": 7,
                 "magnitudeLevelBase": 0,
@@ -331,7 +331,7 @@
                 "subType": -1,
                 "chanceBase": 25,
                 "chanceMod": 0,
-                "chancePerLevel": 1
+                "chancePerLevel": 1,
                 "magnitudeBaseLow": 3,
                 "magnitudeBaseHigh": 7,
                 "magnitudeLevelBase": 0,
@@ -353,7 +353,7 @@
                 "subType": -1,
                 "chanceBase": 50,
                 "chanceMod": 0,
-                "chancePerLevel": 1
+                "chancePerLevel": 1,
                 "magnitudeBaseLow": 8,
                 "magnitudeBaseHigh": 12,
                 "magnitudeLevelBase": 0,
@@ -1686,12 +1686,40 @@
                 "subType": -1,
                 "chanceBase": 50,
                 "chanceMod": 0,
-                "chancePerLevel": 1
+                "chancePerLevel": 1,
                 "magnitudeBaseLow": 8,
                 "magnitudeBaseHigh": 12,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "index": 115,
+        "spellName": "!AncientShock",
+        "element": 4,
+        "rangeType": 1,
+        "icon": 51,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 55,
+                "magnitudeBaseHigh": 79,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            },
+            {
+                "type": 0,
+                "subType": -1,
+                "durationBase": 3,
+                "durationMod": 0,
+                "durationPerLevel": 1,
+                "chanceBase": 65,
+                "chanceMod": 0,
+                "chancePerLevel": 1
             }
         ]
     }
