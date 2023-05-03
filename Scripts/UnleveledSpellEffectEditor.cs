@@ -57,6 +57,25 @@ namespace UnleveledSpellsMod
             UpdateCosts();
         }
 
+        public override void OnPush()
+        {
+            base.OnPush();
+            if(IsSetup)
+            {
+                // Update effect range on the current effect
+                if (UnleveledSpells.Instance.MaxMagnitudeOverride.TryGetValue(EffectTemplate.Properties.Key, out int maxOverride))
+                {
+                    magnitudeBaseMinSpinner.SetRange(1, maxOverride);
+                    magnitudeBaseMaxSpinner.SetRange(1, maxOverride);
+                }
+                else
+                {
+                    magnitudeBaseMinSpinner.SetRange(1, 999);
+                    magnitudeBaseMaxSpinner.SetRange(1, 999);
+                }
+            }
+        }
+
         protected override void LoadTextures()
         {
             // Load source textures
