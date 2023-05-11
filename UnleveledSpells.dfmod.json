@@ -19,7 +19,8 @@
         "Assets/Game/Mods/UnleveledSpells/Scripts/UnleveledMagicRegeneration.cs",
         "Assets/Game/Mods/UnleveledSpells/modsettings.json",
         "Assets/Game/Mods/UnleveledSpells/Scripts/Effects/UnleveledOpen.cs",
-        "Assets/Game/Mods/UnleveledSpells/Scripts/Effects/UnleveledLock.cs"
+        "Assets/Game/Mods/UnleveledSpells/Scripts/Effects/UnleveledLock.cs",
+        "Assets/Game/Mods/UnleveledSpells/DEXEnemySpells.mdb.csv"
     ],
     "Dependencies": [
         {

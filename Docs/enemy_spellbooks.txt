@@ -1,0 +1,79 @@
+Imp (2)
+	Imp's Fire (8-18 / 13)
+	Free Action 
+	Stinking Cloud (12-24 / 18)
+	Chameleon
+
+Dremora Churl (6)
+	Shock (7-44 / 25) -> Shock (11-25 / 18)
+	Fireball (7-42 / 25) -> Minor Fireball (19-31 / 25)
+
+Snow Wolf (10)
+	Ice Bolt (11-85 / 49) -> Ice Bolt (25-59 / 42)
+
+Ghost (11)
+	Wizard Rend (12-24, 35% 3 rounds)
+
+Homunculus (12)
+	Wizard's Fire (13-63 / 40) -> Wizard's Fire (33-47 / 40)
+	Fireball (13-85 / 50) -> Lesser Fireball (40-59 / 50)
+	Toxic Cloud (13-85 / 50) -> Dissolving Cloud (47-67 / 57)
+	Chameleon 
+
+Orc Shaman (13)
+	Invisibility
+	Wizard's Fire (33-47 / 40)
+	Spell Shield (50% 3 rounds)
+	Greater Firestorm (46-64 / 55)
+	Lightning (34-58 / 46)
+	
+Wraith (15)
+	Far Silence (50% 3 rounds)
+	Cold Scream (46-70 / 58) (Cold)
+	
+Hell Hound (15)
+	Wizard's Fire (16-80 / 48) -> Fire Bolt (48-72 / 60)
+	
+Frost Daedra (17)
+	Greater Frostbolt (52-86 / 69)
+	Ice Storm (52-81 / 66)
+	
+Fire Daedra (17)
+	Fireball (52-85 / 68)
+	Major Firestorm (63-87 / 75)
+	
+Daedroth (18)
+	Spell Shield (50% 3 rounds)
+	Silence (75% 3 rounds)
+	Greater Lightning (55-79 / 67)
+	
+Vampire (19)
+	Vampiric Touch (15-30 / 22)
+	
+Seducer
+	Vampiric Touch (15-30 / 22)
+	Energy Leech (40-50 / 45)
+	
+Vampire Ancient (20)
+	Ancient Vampiric Touich (31-50 / 40)
+	Stormhand (55-79 / 67 | 65% for 3 rounds)
+	
+Daedra Lord (20)
+	Greater Lightning (55-79 / 67)
+	Free Action
+	Fireball (52-85 / 68)
+	Energy Leech (40-50)
+	
+Lich (20)
+	Greater Frostbite (55-79 / 67)
+	Free Action
+	Frostball (52-85 / 68)
+	Wizard Rend (12-24 | 35% 3 rounds)
+	
+Ancient Lich (21)
+	Greater Frostbite (55-79 / 67)
+	Free Action
+	Fireball (52-85 / 68)
+	Acid Cloud (64-88 / 76)
+	Greater Lightning (55-79 / 67)
+	

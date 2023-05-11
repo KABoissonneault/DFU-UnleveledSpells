@@ -1,0 +1,48 @@
+Minor (10)
+Lesser (20)
+Normal (40)
+Greater (60)
+Major (80)
+Arch (100)
+
+Fire
+	Touch
+	Range
+		(102) Apprentice's Fire: 8-18 (13)
+		(7*) Wizard's Fire: 33-47 (40)
+		(32*) God's Fire: 80-130 (105)
+		
+		(33*) Wildfire: 10 * 5 rounds (50)
+	Area
+		(25*) Fire Storm: 26-43 (35)
+		(104) Greater Firestorm: 46-64 (55) 
+		(110) Major Firestorm: 63-87 (75)
+	Range Area
+		(14*) Fireball: 52-85 (68)
+	
+Frost
+	Touch
+		(3) Minor Frostbite: 8-14 (11)
+		(118) Greater Frostbite: 55-79 (67)
+	Range
+		(16*) Ice Bolt: 25-59 (42)
+		(107) Greater Icebolt: 52-86 (69)
+	Area	
+		(20) Ice Storm: 52-81 (66)
+	Range Area
+		(110) Frostball: 52-85 (68)
+	
+Shock
+	Touch
+		(8*) Shock: 11-25 (18)
+	Range
+		(31*) Lightning: 34-58 (46)
+		(111) Greater Lightning: 55-79 (67)
+Poison
+	Touch
+	Range
+	Area
+		(101) Stinking Cloud: 12-24 (18)
+		(29*) Toxic Cloud: 25-49 (37)
+	
+		

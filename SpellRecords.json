@@ -38,7 +38,7 @@
         ]
     },
     {
-        "spellName": "Frostbite",
+        "spellName": "Minor Frostbite",
         "element": 1,
         "rangeType": 1,
         "cost": 0,
@@ -118,8 +118,8 @@
             {
                 "type": 4,
                 "subType": 0,
-                "magnitudeBaseLow": 13,
-                "magnitudeBaseHigh": 27,
+                "magnitudeBaseLow": 33,
+                "magnitudeBaseHigh": 47,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
@@ -463,7 +463,7 @@
         ]
     },
     {
-        "spellName": "Fire Storm",
+        "spellName": "Lesser Fire Storm",
         "element": 0,
         "rangeType": 3,
         "cost": 245,
@@ -1496,7 +1496,7 @@
     },
     {
         "index": 101,
-        "spellName": "!ImpCloud",
+        "spellName": "Stinking Cloud",
         "element": 4,
         "rangeType": 3,
         "icon": 46,
@@ -1514,8 +1514,8 @@
     },
     {
         "index": 102,
-        "spellName": "!ImpFire",
-        "element": 4,
+        "spellName": "Apprentice's Fire",
+        "element": 0,
         "rangeType": 1,
         "icon": 58,
         "effects": [
@@ -1532,16 +1532,16 @@
     },
     {
         "index": 103,
-        "spellName": "!Mauloch's Fire",
-        "element": 0,
-        "rangeType": 2,
-        "icon": 58,
+        "spellName": "Balyna's Salve",
+        "element": 4,
+        "rangeType": 0,
+        "icon": 7,
         "effects": [
             {
-                "type": 4,
-                "subType": 0,
-                "magnitudeBaseLow": 33,
-                "magnitudeBaseHigh": 47,
+                "type": 10,
+                "subType": 8,
+                "magnitudeBaseLow": 20,
+                "magnitudeBaseHigh": 30,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
@@ -1550,7 +1550,7 @@
     },
     {
         "index": 104,
-        "spellName": "!Orc Storm",
+        "spellName": "Greater Flamestorm",
         "element": 0,
         "rangeType": 3,
         "icon": 58,
@@ -1558,8 +1558,8 @@
             {
                 "type": 4,
                 "subType": 0,
-                "magnitudeBaseLow": 40,
-                "magnitudeBaseHigh": 59,
+                "magnitudeBaseLow": 46,
+                "magnitudeBaseHigh": 64,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
@@ -1568,9 +1568,9 @@
     },
     {
         "index": 106,
-        "spellName": "!WraithScreech",
+        "spellName": "!Cold Scream",
         "element": 1,
-        "rangeType": 2,
+        "rangeType": 3,
         "icon": 23,
         "effects": [
             {
@@ -1586,7 +1586,7 @@
     },
     {
         "index": 107,
-        "spellName": "!FrostDaedraBolt",
+        "spellName": "Greater Icebolt",
         "element": 1,
         "rangeType": 2,
         "icon": 49,
@@ -1604,7 +1604,7 @@
     },
     {
         "index": 110,
-        "spellName": "!FireDaedraStorm",
+        "spellName": "Major Firestorm",
         "element": 0,
         "rangeType": 3,
         "icon": 58,
@@ -1612,8 +1612,8 @@
             {
                 "type": 4,
                 "subType": 0,
-                "magnitudeBaseLow": 52,
-                "magnitudeBaseHigh": 71,
+                "magnitudeBaseLow": 63,
+                "magnitudeBaseHigh": 87,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
@@ -1622,7 +1622,7 @@
     },
     {
         "index": 111,
-        "spellName": "!DaedrothLightning",
+        "spellName": "Greater Lightning",
         "element": 3,
         "rangeType": 2,
         "icon": 51,
@@ -1640,7 +1640,7 @@
     },
     {
         "index": 112,
-        "spellName": "!AncientVampiricTouch",
+        "spellName": "!Ancient Vampire Touch",
         "element": 4,
         "rangeType": 1,
         "icon": 8,
@@ -1658,7 +1658,7 @@
     },
     {
         "index": 113,
-        "spellName": "!AncientToxicCloud",
+        "spellName": "!Acid Cloud",
         "element": 4,
         "rangeType": 3,
         "icon": 46,
@@ -1697,8 +1697,8 @@
     },
     {
         "index": 115,
-        "spellName": "!AncientShock",
-        "element": 4,
+        "spellName": "!Stormhand",
+        "element": 3,
         "rangeType": 1,
         "icon": 51,
         "effects": [
@@ -1720,6 +1720,119 @@
                 "chanceBase": 65,
                 "chanceMod": 0,
                 "chancePerLevel": 1
+            }
+        ]
+    },
+    {
+        "index": 116,
+        "spellName": "!Lesser Fireball",
+        "element": 0,
+        "rangeType": 4,
+        "icon": 22,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 40,
+                "magnitudeBaseHigh": 59,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "!Dissolving Cloud",
+        "element": 2,
+        "rangeType": 3,
+        "cost": 175,
+        "index": 117,
+        "icon": 46,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 47,
+                "magnitudeBaseHigh": 67,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Greater Frostbite",
+        "element": 1,
+        "rangeType": 1,
+        "cost": 0,
+        "index": 118,
+        "icon": 56,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 55,
+                "magnitudeBaseHigh": 79,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "!Frostball",
+        "element": 1,
+        "rangeType": 4,
+        "cost": 130,
+        "index": 119,
+        "icon": 23,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 52,
+                "magnitudeBaseHigh": 85,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "!Fire Bolt",
+        "element": 0,
+        "rangeType": 2,
+        "cost": 125,
+        "index": 120,
+        "icon": 58,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 48,
+                "magnitudeBaseHigh": 72,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
+            }
+        ]
+    },
+    {
+        "spellName": "Minor Fireball",
+        "element": 0,
+        "rangeType": 4,
+        "cost": 130,
+        "index": 121,
+        "icon": 22,
+        "effects": [
+            {
+                "type": 4,
+                "subType": 0,
+                "magnitudeBaseLow": 19,
+                "magnitudeBaseHigh": 31,
+                "magnitudeLevelBase": 0,
+                "magnitudeLevelHigh": 0,
+                "magnitudePerLevel": 1
             }
         ]
     }

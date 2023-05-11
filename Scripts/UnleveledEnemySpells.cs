@@ -21,10 +21,10 @@ namespace UnleveledSpellsMod
 
         static byte[] ImpSpells = // Level 2
         {
-            0x66, // Wizard's Fire (8-18)
-            0x0A, // Free Action 
-            0x65, // Toxic Cloud (12-24)
-            0x2C // Chameleon
+            102, // Imp's Fire (8-18 / 13)
+            10, // Free Action 
+            101, // Stinking Cloud (12-24 / 18)
+            44, // Chameleon
         };
 
         // Classic
@@ -55,10 +55,10 @@ namespace UnleveledSpellsMod
         static byte[] OrcShamanSpells = // Level 13
         {
             0x06, // Invisibility 
-            0x67, // Mauloch's Fire (33-47)
+            7, // Wizard's Fire (33-47 / 40)
             0x16, // Spell Shield (50% for 3 rounds)
-            0x68, // Orc Storm (40-59)
-            0x1F // Lightning (34-58)
+            104, // Greater Firestorm (46-64 / 55)
+            31 // Lightning (34-58 / 46)
         };
 
         // Classic
@@ -73,7 +73,7 @@ namespace UnleveledSpellsMod
         static byte[] WraithSpells = // Level 15
         {
             0x1C, // Far Silence (50% for 3 rounds)
-            0x6A // Wraith Screech (46-70) (Cold)
+            106 // Cold Scream (46-70 / 58) (Cold)
         };
 
         // Classic
@@ -87,8 +87,8 @@ namespace UnleveledSpellsMod
 
         static byte[] FrostDaedraSpells = // Level 17
         {
-            0x6B, // Frost Bolt (52-86)
-            0x14 // Ice Storm (52-81)
+            107, // Greater Frostbolt (52-86 / 69)
+            20 // Ice Storm (52-81 / 66)
         };
 
         // Classic
@@ -102,8 +102,8 @@ namespace UnleveledSpellsMod
 
         static byte[] FireDaedraSpells = // Level 17
         {
-            0x0E, // Fireball (52-85)
-            0x6E // Fire Storm (52-71)
+            0x0E, // Fireball (52-85 / 68)
+            110 // Major Firestorm (63-87 / 75)
         };
 
         // Classic
@@ -120,7 +120,7 @@ namespace UnleveledSpellsMod
         {
             0x16, // Spell Shield (50% for 3 rounds)
             0x17, // Silence (75% for 3 rounds)
-            0x6F // Daedroth Lightning (55-79)
+            111 // Greater Lightning (55-79 / 67)
         };
 
         // Classic
@@ -164,8 +164,8 @@ namespace UnleveledSpellsMod
 
         static byte[] VampireAncientSpells = // Level 20
         {
-            0x70, // Ancient Vampiric Touch (31-50)
-            0x32 // Paralysis (35% for 3 rounds)
+            112, // Ancient Vampiric Touch (31-50)
+            115 // Stormhand (55-79 / 67 | 65% for 3 rounds)
         };
 
         // Classic
@@ -182,9 +182,9 @@ namespace UnleveledSpellsMod
 
         static byte[] DaedraLordSpells = // Level 20
         {
-            0x6F, // Daedroth Lightning (55-79)
+            111, // Greater Lightning (55-79 / 67)
             0x0A, // Free Action
-            0x0E, // Fireball (52-85)
+            14, // Fireball (52-85 / 68)
             0x43 // Energy Leech (40-50)
         };
 
@@ -202,9 +202,9 @@ namespace UnleveledSpellsMod
 
         static byte[] LichSpells = // Level 20
         {
-            0x6F, // Daedroth Lightning (55-79)
+            118, // Greater Frostbite (55-79 / 67)
             0x0A, // Free Action
-            0x0E, // Fireball (52-85)
+            110, // Frostball (52-85 / 68)
             0x22, // Wizard Rend (12-24) | (35% for 3 rounds)
         };
 
@@ -223,72 +223,71 @@ namespace UnleveledSpellsMod
 
         static byte[] AncientLichSpells = // Level 21
         {
-            0x73, // Ancient Shock (55-79 | 65% paralyze 3 rounds)
+            118, // Greater Frostbite (55-79)
             0x0A, // Free Action
-            0x0E, // Fireball (52-85)
-            0x71, // Ancient Toxic Cloud (62-86)
-            0x6F, // Daedroth Lightning (55-79)
-            0x22, // Wizard Rend (12-24) | (35% for 3 rounds)
+            110, // Frostball (52-85)
+            113, // Acid Cloud (64-88 / 76)
         };
 
         static byte[] EnemyClass1_2 =
         {
-            0x03, // Frostbite (8-14)
-            0x08, // Shock (11-25)
+            0x03, // Frostbite (8-14 / 11)
+            102, // Apprentice's Fire (8-18 / 13)
             0x61, // Balyna's Balm (5-15)
         };
 
         static byte[] EnemyClass3_5 =
         {
-            0x03, // Frostbite (8-14)
-            0x08, // Shock (11-25)
+            0x03, // Frostbite (8-14 / 11)
+            102, // Apprentice's Fire (8-18 / 13)
+            0x08, // Shock (11-25 / 18)
             0x61, // Balyna's Balm (5-15)
-            0x07, // Wizard's Fire (13-27)
         };
 
         static byte[] EnemyClass6_8 =
         {
-            0x08, // Shock (11-25)
             0x61, // Balyna's Balm (5-15)
-            0x07, // Wizard's Fire (13-27)
-            0x10, // Ice Bolt (25-59)
-            0x1D, // Toxic Cloud (25-49)
+            33, // Wildfire (10*5 / 50)
+            16, // Ice Bolt (25-59 / 42)
+            29, // Toxic Cloud (25-49 / 37)
         };
 
         static byte[] EnemyClass9_11 =
         {
-            0x61, // Balyna's Balm (5-15)
-            0x07, // Wizard's Fire (13-27)
-            0x10, // Ice Bolt (25-59)
-            0x1D, // Toxic Cloud (25-49)
-            0x1F, // Lightning (35-58)
+            103, // Balyna's Salve (20-30)
+            7, // Wizard's Fire (33-47 / 40)
+            16, // Ice Bolt (25-59 / 42)
+            29, // Toxic Cloud (25-49 / 37)
+            31, // Lightning (35-58 / 46)
         };
 
         static byte[] EnemyClass12_14 =
         {
-            0x07, // Wizard's Fire (13-27)
-            0x10, // Ice Bolt (25-59)
-            0x1D, // Toxic Cloud (25-49)
-            0x1F, // Lightning (35-58)
-            0x0A, // Free Action
+            103, // Balyna's Salve (20-30)
+            7, // Wizard's Fire (33-47 / 40)
+            16, // Ice Bolt (25-59 / 42)
+            29, // Toxic Cloud (25-49 / 37)
+            31, // Lightning (35-58 / 46)
+            10, // Free Action
         };
 
         static byte[] EnemyClass15_17 =
         {
-            0x10, // Ice Bolt (25-59)
-            0x1D, // Toxic Cloud (25-49)
-            0x1F, // Lightning (35-58)
-            0x0A, // Free Action
-            0x0E, // Fireball (52-85)
+            103, // Balyna's Salve (20-30)
+            16, // Ice Bolt (25-59 / 42)
+            29, // Toxic Cloud (25-49 / 37)
+            31, // Lightning (35-58 / 46)
+            10, // Free Action
+            14, // Fireball (52-85 / 68)
         };
 
         static byte[] EnemyClass18 =
         {
-            0x1D, // Toxic Cloud (25-49)
-            0x1F, // Lightning (35-58)
+            113, // Acid Cloud (64-88 / 76)
+            111, // Greater Lightning (55-79 / 67)
             0x0A, // Free Action
-            0x0E, // Fireball (52-85)
-            0x14, // Ice Storm (52-81)
+            14, // Fireball (52-85 / 68)
+            20 // Ice Storm (52-81 / 66)
         };
 
         static byte[][] EnemyClassSpells =
