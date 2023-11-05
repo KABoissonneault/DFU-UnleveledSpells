@@ -95,20 +95,6 @@ namespace UnleveledSpellsMod
             StateManager.OnStartNewGame += OnGameStarted;
             StartGameBehaviour.OnStartGame += OnNewGameStarted;
 
-            // Fix IK's Mage Light -- Inferno :)
-            try
-            {
-                EntityEffectBroker.CustomSpellBundleOffer MageLightInferno = GameManager.Instance.EntityEffectBroker.GetCustomSpellBundleOffer("MageLightInferno-CustomOffer");
-                ref EffectSettings effect = ref MageLightInferno.BundleSetttings.Effects[0].Settings;
-                effect.DurationBase = 15;
-                effect.DurationPlus = 0;
-                effect.DurationPerLevel = 1;
-            }
-            catch (Exception e)
-            {
-                Debug.LogError(e.Message);
-            }
-
             EnemyEntity.OnLootSpawned += UnleveledEnemySpells.OnEnemySpawned;
 
             Debug.Log("Finished mod init: Unleveled Spells");
