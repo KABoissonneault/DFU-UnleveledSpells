@@ -19,7 +19,7 @@ namespace UnleveledSpellsMod
             properties.AllowedElements = EntityEffectBroker.ElementFlags_MagicOnly;
             properties.AllowedCraftingStations = MagicCraftingStations.SpellMaker;
             properties.MagicSkill = DFCareer.MagicSkills.Mysticism;
-            properties.MagnitudeCosts = MakeEffectCosts(42.6f, 0);
+            properties.MagnitudeCosts = MakeEffectCosts(71.0f, 0);
         }
 
         protected override void StartWaitingForDoor()
