@@ -204,7 +204,7 @@ namespace UnleveledSpellsMod
             for (int i = 1; i < lines.Length; ++i)
             {
                 string line = lines[i];
-                string[] tokens = line.Split(';');
+                string[] tokens = line.Split(';', ',');
                 string key = tokens[0];
 
                 // If all the tokens are empty, don't set override
@@ -327,20 +327,59 @@ namespace UnleveledSpellsMod
                 float durationFactor = 1;
                 if (effect.Properties.SupportDuration)
                 {
-                    durationFactor = settings.DurationBase;
+                    EffectCosts durationCost = new EffectCosts();
+                    if (!suppressedOverrides.Contains(effect.Key))
+                    {
+                        durationCostOverride.TryGetValue(effect.Key, out durationCost);
+                    }
+
+                    if (durationCost.CostA != 0.0f)
+                    {
+                        durationFactor = Mathf.Pow(settings.DurationBase, durationCost.CostA);
+                    }
+                    else
+                    {
+                        durationFactor = settings.DurationBase;
+                    }
                 }
 
                 float chanceFactor = 1;
                 if (effect.Properties.SupportChance)
                 {
-                    chanceFactor = Mathf.Pow(settings.ChanceBase / 100.0f, 1.28f);
+                    EffectCosts chanceCost = new EffectCosts();
+                    if (!suppressedOverrides.Contains(effect.Key))
+                    {
+                        chanceCostOverride.TryGetValue(effect.Key, out chanceCost);
+                    }
+
+                    if (chanceCost.CostA != 0.0f)
+                    {
+                        chanceFactor = Mathf.Pow(settings.ChanceBase / 100.0f, chanceCost.CostA);
+                    }
+                    else
+                    {
+                        chanceFactor = settings.ChanceBase / 100.0f;
+                    }
                 }
 
                 float magnitudeFactor = 1;
                 if (effect.Properties.SupportMagnitude)
                 {
+                    EffectCosts magnitudeCost = new EffectCosts();
+                    if (!suppressedOverrides.Contains(effect.Key))
+                    {
+                        magnitudeCostOverride.TryGetValue(effect.Key, out magnitudeCost);
+                    }
+
                     float magnitudeBase = (settings.MagnitudeBaseMin + settings.MagnitudeBaseMax) / 2.0f;
-                    magnitudeFactor = Mathf.Pow(magnitudeBase, 1.1f);
+                    if (magnitudeCost.CostA != 0.0f)
+                    {
+                        magnitudeFactor = Mathf.Pow(magnitudeBase, magnitudeCost.CostA);
+                    }
+                    else
+                    {
+                        magnitudeFactor = magnitudeBase;
+                    }                    
                 }
 
                 // Get related skill
@@ -361,7 +400,7 @@ namespace UnleveledSpellsMod
                 // Add gold costs together and calculate spellpoint cost from the result
                 FormulaHelper.SpellCost effectCost;
                 effectCost.goldCost = Mathf.RoundToInt(factorResult * 40.0f / 6.0f);
-                effectCost.spellPointCost = Mathf.RoundToInt(factorResult * (60 - (Math.Min(skillValue, 100) / 2)) / 60.0f);
+                effectCost.spellPointCost = Mathf.RoundToInt(factorResult * (60.0f - (Math.Min(skillValue, 100) / 2.0f)) / 60.0f);
 
                 return effectCost;
             }
