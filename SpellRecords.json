@@ -11,6 +11,7 @@
                 "type": 16,
                 "subType": -1,
                 "chanceBase": 25,
+                "chanceMod": 0,
                 "chancePerLevel": 1,
                 "magnitudeBaseLow": 3,
                 "magnitudeBaseHigh": 7,
