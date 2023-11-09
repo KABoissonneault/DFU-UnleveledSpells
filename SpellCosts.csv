@@ -10,9 +10,9 @@ Paralyze,,,,1.28,,,,,,50
 Shield,8,,,,,,8,,,
 Slowfall,20,,,,,,,,,
 WaterBreathing,20,,,,,,,,,
-ContinuousDamage-Fatigue,0.7,,,,,,,,,0.6
-ContinuousDamage-Health,0.7,,,,,,,,,0.75
-ContinuousDamage-SpellPoints,0.7,,,,,,,,,0.9
+ContinuousDamage-Fatigue,0.5,,,,,,,,,0.6
+ContinuousDamage-Health,0.5,,,,,,,,,0.75
+ContinuousDamage-SpellPoints,0.5,,,,,,,,,0.9
 Damage-Fatigue,,,,,,,4,,,
 Damage-Health,,,,,,,5,,,
 Damage-SpellPoints,,,,,,,6,,,
@@ -74,7 +74,7 @@ Heal-Strength,,,,,,,12,,,
 Heal-Willpower,,,,,,,12,,,
 Heal-Fatigue,,,,,,,8,,,
 Heal-Health,,,,,,,16,,,
-Regenerate,0.7,,,,,,,,,2.4
+Regenerate,0.5,,,,,,,,,2.4
 SpellAbsorption,,,,1.28,,,,,,100
 Charm,,,,1.28,,,,,,100
 Detect-Enemy,8,,,,,,,,,
