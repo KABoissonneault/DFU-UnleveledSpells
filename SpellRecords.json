@@ -32,7 +32,7 @@
             {
                 "type": 31,
                 "subType": -1,
-                "durationBase": 5,
+                "durationBase": 10,
                 "durationMod": 0,
                 "durationPerLevel": 1
             }
@@ -68,7 +68,7 @@
             {
                 "type": 14,
                 "subType": -1,
-                "durationBase": 5,
+                "durationBase": 10,
                 "durationMod": 0,
                 "durationPerLevel": 1
             }
@@ -102,7 +102,7 @@
             {
                 "type": 13,
                 "subType": 0,
-                "durationBase": 5,
+                "durationBase": 10,
                 "durationMod": 0,
                 "durationPerLevel": 1
             }
@@ -176,7 +176,7 @@
             {
                 "type": 26,
                 "subType": -1,
-                "durationBase": 3,
+                "durationBase": 10,
                 "durationMod": 0,
                 "durationPerLevel": 1
             }
@@ -196,7 +196,7 @@
                 "durationBase": 5,
                 "durationMod": 0,
                 "durationPerLevel": 1,
-                "chanceBase": 25,
+                "chanceBase": 50,
                 "chanceMod": 0,
                 "chancePerLevel": 1
             }
@@ -216,7 +216,7 @@
                 "durationBase": 5,
                 "durationMod": 0,
                 "durationPerLevel": 1,
-                "chanceBase": 25,
+                "chanceBase": 50,
                 "chanceMod": 0,
                 "chancePerLevel": 1
             }
@@ -236,7 +236,7 @@
                 "durationBase": 5,
                 "durationMod": 0,
                 "durationPerLevel": 1,
-                "chanceBase": 25,
+                "chanceBase": 50,
                 "chanceMod": 0,
                 "chancePerLevel": 1
             }
@@ -308,11 +308,11 @@
             {
                 "type": 35,
                 "subType": -1,
-                "durationBase": 15,
+                "durationBase": 20,
                 "durationMod": 0,
                 "durationPerLevel": 1,
-                "magnitudeBaseLow": 15,
-                "magnitudeBaseHigh": 25,
+                "magnitudeBaseLow": 50,
+                "magnitudeBaseHigh": 50,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
@@ -393,7 +393,7 @@
             {
                 "type": 22,
                 "subType": -1,
-                "durationBase": 3,
+                "durationBase": 5,
                 "durationMod": 0,
                 "durationPerLevel": 1,
                 "chanceBase": 50,
@@ -433,11 +433,11 @@
             {
                 "type": 18,
                 "subType": -1,
-                "durationBase": 5,
+                "durationBase": 10,
                 "durationMod": 0,
                 "durationPerLevel": 1,
-                "magnitudeBaseLow": 5,
-                "magnitudeBaseHigh": 5,
+                "magnitudeBaseLow": 10,
+                "magnitudeBaseHigh": 10,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
                 "magnitudePerLevel": 1
@@ -496,7 +496,7 @@
                 "durationBase": 5,
                 "durationMod": 0,
                 "durationPerLevel": 1,
-                "chanceBase": 25,
+                "chanceBase": 50,
                 "chanceMod": 0,
                 "chancePerLevel": 1
             }
@@ -729,7 +729,7 @@
             {
                 "type": 25,
                 "subType": -1,
-                "durationBase": 5,
+                "durationBase": 10,
                 "durationMod": 0,
                 "durationPerLevel": 1
             }
@@ -746,7 +746,7 @@
             {
                 "type": 27,
                 "subType": -1,
-                "durationBase": 12,
+                "durationBase": 10,
                 "durationMod": 0,
                 "durationPerLevel": 1
             }
@@ -763,7 +763,7 @@
             {
                 "type": 22,
                 "subType": -1,
-                "durationBase": 5,
+                "durationBase": 10,
                 "durationMod": 0,
                 "durationPerLevel": 1,
                 "chanceBase": 25,
@@ -802,7 +802,7 @@
             {
                 "type": 31,
                 "subType": -1,
-                "durationBase": 15,
+                "durationBase": 10,
                 "durationMod": 0,
                 "durationPerLevel": 1
             }
@@ -819,7 +819,7 @@
             {
                 "type": 30,
                 "subType": -1,
-                "durationBase": 6,
+                "durationBase": 10,
                 "durationMod": 0,
                 "durationPerLevel": 1
             }
@@ -836,7 +836,7 @@
             {
                 "type": 23,
                 "subType": 0,
-                "durationBase": 6,
+                "durationBase": 10,
                 "durationMod": 0,
                 "durationPerLevel": 1
             }
@@ -853,7 +853,7 @@
             {
                 "type": 24,
                 "subType": 0,
-                "durationBase": 6,
+                "durationBase": 10,
                 "durationMod": 0,
                 "durationPerLevel": 1
             }
@@ -870,10 +870,10 @@
             {
                 "type": 21,
                 "subType": -1,
-                "durationBase": 6,
+                "durationBase": 5,
                 "durationMod": 0,
                 "durationPerLevel": 1,
-                "chanceBase": 20,
+                "chanceBase": 50,
                 "chanceMod": 0,
                 "chancePerLevel": 1
             }
@@ -890,10 +890,10 @@
             {
                 "type": 20,
                 "subType": -1,
-                "durationBase": 6,
+                "durationBase": 5,
                 "durationMod": 0,
                 "durationPerLevel": 1,
-                "chanceBase": 25,
+                "chanceBase": 50,
                 "chanceMod": 0,
                 "chancePerLevel": 1
             }
@@ -910,7 +910,7 @@
             {
                 "type": 44,
                 "subType": -1,
-                "durationBase": 6,
+                "durationBase": 10,
                 "durationMod": 0,
                 "durationPerLevel": 1,
                 "chanceBase": 20,
@@ -950,10 +950,10 @@
             {
                 "type": 1,
                 "subType": 1,
-                "durationBase": 6,
+                "durationBase": 5,
                 "durationMod": 0,
                 "durationPerLevel": 1,
-                "magnitudeBaseLow": 10,
+                "magnitudeBaseLow": 20,
                 "magnitudeBaseHigh": 20,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
@@ -994,7 +994,7 @@
                 "durationBase": 5,
                 "durationMod": 0,
                 "durationPerLevel": 1,
-                "magnitudeBaseLow": 10,
+                "magnitudeBaseLow": 20,
                 "magnitudeBaseHigh": 20,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
@@ -1016,7 +1016,7 @@
                 "durationBase": 5,
                 "durationMod": 0,
                 "durationPerLevel": 1,
-                "magnitudeBaseLow": 10,
+                "magnitudeBaseLow": 20,
                 "magnitudeBaseHigh": 20,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
@@ -1154,7 +1154,7 @@
             {
                 "type": 12,
                 "subType": -1,
-                "durationBase": 3,
+                "durationBase": 10,
                 "durationMod": 0,
                 "durationPerLevel": 1,
                 "chanceBase": 50,
@@ -1232,10 +1232,10 @@
             {
                 "type": 9,
                 "subType": 0,
-                "durationBase": 5,
+                "durationBase": 10,
                 "durationMod": 0,
                 "durationPerLevel": 1,
-                "magnitudeBaseLow": 10,
+                "magnitudeBaseLow": 20,
                 "magnitudeBaseHigh": 20,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
@@ -1254,10 +1254,10 @@
             {
                 "type": 9,
                 "subType": 1,
-                "durationBase": 5,
+                "durationBase": 10,
                 "durationMod": 0,
                 "durationPerLevel": 1,
-                "magnitudeBaseLow": 10,
+                "magnitudeBaseLow": 20,
                 "magnitudeBaseHigh": 20,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
@@ -1276,10 +1276,10 @@
             {
                 "type": 9,
                 "subType": 2,
-                "durationBase": 5,
+                "durationBase": 10,
                 "durationMod": 0,
                 "durationPerLevel": 1,
-                "magnitudeBaseLow": 10,
+                "magnitudeBaseLow": 20,
                 "magnitudeBaseHigh": 20,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
@@ -1298,10 +1298,10 @@
             {
                 "type": 9,
                 "subType": 3,
-                "durationBase": 5,
+                "durationBase": 10,
                 "durationMod": 0,
                 "durationPerLevel": 1,
-                "magnitudeBaseLow": 10,
+                "magnitudeBaseLow": 20,
                 "magnitudeBaseHigh": 20,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
@@ -1320,10 +1320,10 @@
             {
                 "type": 9,
                 "subType": 6,
-                "durationBase": 5,
+                "durationBase": 10,
                 "durationMod": 0,
                 "durationPerLevel": 1,
-                "magnitudeBaseLow": 10,
+                "magnitudeBaseLow": 20,
                 "magnitudeBaseHigh": 20,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
@@ -1342,10 +1342,10 @@
             {
                 "type": 9,
                 "subType": 4,
-                "durationBase": 5,
+                "durationBase": 10,
                 "durationMod": 0,
                 "durationPerLevel": 1,
-                "magnitudeBaseLow": 10,
+                "magnitudeBaseLow": 20,
                 "magnitudeBaseHigh": 20,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
@@ -1364,10 +1364,10 @@
             {
                 "type": 9,
                 "subType": 5,
-                "durationBase": 5,
+                "durationBase": 10,
                 "durationMod": 0,
                 "durationPerLevel": 1,
-                "magnitudeBaseLow": 10,
+                "magnitudeBaseLow": 20,
                 "magnitudeBaseHigh": 20,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
@@ -1386,10 +1386,10 @@
             {
                 "type": 9,
                 "subType": 7,
-                "durationBase": 5,
+                "durationBase": 10,
                 "durationMod": 0,
                 "durationPerLevel": 1,
-                "magnitudeBaseLow": 10,
+                "magnitudeBaseLow": 20,
                 "magnitudeBaseHigh": 20,
                 "magnitudeLevelBase": 0,
                 "magnitudeLevelHigh": 0,
