@@ -1,6 +1,8 @@
 using DaggerfallWorkshop;
 using DaggerfallWorkshop.Game.Entity;
+using DaggerfallWorkshop.Utility;
 using System;
+using System.Linq;
 using UnityEngine;
 
 
@@ -309,13 +311,58 @@ namespace UnleveledSpellsMod
         // Before: Spider Touch (100% for 13 rounds)
         // After: Spider Touch (35% for 3 rounds)
 
-        static bool HasCustomSpells(EnemyEntity e)
+        static bool HasCustomSpells(int mobileID)
         {
             // Only support baseline enemies for now
-            if (!Enum.IsDefined(typeof(MobileTypes), e.MobileEnemy.ID))
+            if (!Enum.IsDefined(typeof(MobileTypes), mobileID))
                 return false;
 
             return true;
+        }
+
+        static bool HasCustomSpells(EnemyEntity e)
+        {
+            return HasCustomSpells(e.MobileEnemy.ID);
+        }
+
+        public static byte[] GetEnemySpells(int mobileID, int level = 1)
+        {
+            if(!HasCustomSpells(mobileID))
+                return null;
+                        
+            if (DaggerfallEntity.IsClassEnemyId(mobileID))
+            {
+                MobileEnemy mobile = EnemyBasics.Enemies.First(e => e.ID == mobileID);
+
+                if (mobile.CastsMagic)
+                {
+                    int spellListLevel = level / 3;
+                    if (spellListLevel > 6)
+                        spellListLevel = 6;
+                    return EnemyClassSpells[spellListLevel];
+                }
+            }
+            else
+            {
+                switch((MobileTypes)mobileID)
+                {
+                    case MobileTypes.Imp: return ImpSpells;
+                    case MobileTypes.Ghost: return GhostSpells;
+                    case MobileTypes.OrcShaman: return OrcShamanSpells;
+                    case MobileTypes.Wraith: return WraithSpells;
+                    case MobileTypes.FrostDaedra: return FrostDaedraSpells;
+                    case MobileTypes.FireDaedra: return FireDaedraSpells;
+                    case MobileTypes.Daedroth: return DaedrothSpells;
+                    case MobileTypes.Vampire: return VampireSpells;
+                    case MobileTypes.DaedraSeducer: return SeducerSpells;
+                    case MobileTypes.VampireAncient: return VampireAncientSpells;
+                    case MobileTypes.DaedraLord: return DaedraLordSpells;
+                    case MobileTypes.Lich: return LichSpells;
+                    case MobileTypes.AncientLich: return AncientLichSpells;
+                }
+            }
+
+            return null;
         }
 
         public static void OnEnemySpawned(object sender, EnemyLootSpawnedEventArgs args)
@@ -331,46 +378,9 @@ namespace UnleveledSpellsMod
             while (enemyEntity.SpellbookCount() > 0)
                 enemyEntity.DeleteSpell(enemyEntity.SpellbookCount() - 1);
 
-            // Assign new
-            if (enemyEntity.EntityType == EntityTypes.EnemyClass)
-            {
-                if (enemyEntity.MobileEnemy.CastsMagic)
-                {
-                    int spellListLevel = enemyEntity.Level / 3;
-                    if (spellListLevel > 6)
-                        spellListLevel = 6;
-                    enemyEntity.SetEnemySpells(EnemyClassSpells[spellListLevel]);
-                }
-            }
-            else
-            {
-                if (enemyEntity.CareerIndex == (int)MonsterCareers.Imp)
-                    enemyEntity.SetEnemySpells(ImpSpells);
-                else if (enemyEntity.CareerIndex == (int)MonsterCareers.Ghost)
-                    enemyEntity.SetEnemySpells(GhostSpells);
-                else if (enemyEntity.CareerIndex == (int)MonsterCareers.OrcShaman)
-                    enemyEntity.SetEnemySpells(OrcShamanSpells);
-                else if (enemyEntity.CareerIndex == (int)MonsterCareers.Wraith)
-                    enemyEntity.SetEnemySpells(WraithSpells);
-                else if (enemyEntity.CareerIndex == (int)MonsterCareers.FrostDaedra)
-                    enemyEntity.SetEnemySpells(FrostDaedraSpells);
-                else if (enemyEntity.CareerIndex == (int)MonsterCareers.FireDaedra)
-                    enemyEntity.SetEnemySpells(FireDaedraSpells);
-                else if (enemyEntity.CareerIndex == (int)MonsterCareers.Daedroth)
-                    enemyEntity.SetEnemySpells(DaedrothSpells);
-                else if (enemyEntity.CareerIndex == (int)MonsterCareers.Vampire)
-                    enemyEntity.SetEnemySpells(VampireSpells);
-                else if (enemyEntity.CareerIndex == (int)MonsterCareers.DaedraSeducer)
-                    enemyEntity.SetEnemySpells(SeducerSpells);
-                else if (enemyEntity.CareerIndex == (int)MonsterCareers.VampireAncient)
-                    enemyEntity.SetEnemySpells(VampireAncientSpells);
-                else if (enemyEntity.CareerIndex == (int)MonsterCareers.DaedraLord)
-                    enemyEntity.SetEnemySpells(DaedraLordSpells);
-                else if (enemyEntity.CareerIndex == (int)MonsterCareers.Lich)
-                    enemyEntity.SetEnemySpells(LichSpells);
-                else if (enemyEntity.CareerIndex == (int)MonsterCareers.AncientLich)
-                    enemyEntity.SetEnemySpells(AncientLichSpells);
-            }
+            var spells = GetEnemySpells(enemyEntity.MobileEnemy.ID, enemyEntity.Level);
+            if(spells != null)
+                enemyEntity.SetEnemySpells(spells);
         }
     }
 }

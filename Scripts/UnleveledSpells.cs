@@ -42,6 +42,8 @@ namespace UnleveledSpellsMod
         const string Core = "Core";
         const string MagicRegenSection = "MagicRegen";
 
+        public static Mod Mod {  get { return mod; } }
+
         #region Properties
         public Dictionary<string, int> MaxMagnitudeOverride { get { return maxMagnitudeOverride; } }
 
@@ -96,6 +98,8 @@ namespace UnleveledSpellsMod
             StartGameBehaviour.OnStartGame += OnNewGameStarted;
 
             EnemyEntity.OnLootSpawned += UnleveledEnemySpells.OnEnemySpawned;
+
+            UnleveledSpellsCommands.RegisterCommands();
 
             Debug.Log("Finished mod init: Unleveled Spells");
         }
