@@ -1,9 +1,9 @@
 {
     "ModTitle": "Unleveled Spells",
-    "ModVersion": "0.2.5",
+    "ModVersion": "1.0",
     "ModAuthor": "kaboissonneault",
     "ContactInfo": "kaboissonneault@gmail.com",
-    "DFUnity_Version": "0.13.5",
+    "DFUnity_Version": "0.16.1",
     "ModDescription": "Removes the level-scaling components from spells and enchanted items",
     "GUID": "eb8c0317-b8ab-4679-bf61-1eaaff77a1f3",
     "Files": [
@@ -20,7 +20,8 @@
         "Assets/Game/Mods/UnleveledSpells/modsettings.json",
         "Assets/Game/Mods/UnleveledSpells/Scripts/Effects/UnleveledOpen.cs",
         "Assets/Game/Mods/UnleveledSpells/Scripts/Effects/UnleveledLock.cs",
-        "Assets/Game/Mods/UnleveledSpells/DEXEnemySpells.mdb.csv"
+        "Assets/Game/Mods/UnleveledSpells/DEXEnemySpells.mdb.csv",
+        "Assets/Game/Mods/UnleveledSpells/Scripts/UnleveledSpellsCommands.cs"
     ],
     "Dependencies": [
         {
@@ -28,6 +29,11 @@
             "IsOptional": true,
             "IsPeer": false,
             "Version": "0.6.0"
+        },
+        {
+            "Name": "daggerfall enemy expansion",
+            "IsOptional": true,
+            "IsPeer": false
         }
     ]
 }
