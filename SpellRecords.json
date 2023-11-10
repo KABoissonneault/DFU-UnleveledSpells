@@ -1498,7 +1498,7 @@
     {
         "index": 101,
         "spellName": "Stinking Cloud",
-        "element": 4,
+        "element": 2,
         "rangeType": 3,
         "icon": 46,
         "effects": [
@@ -1660,7 +1660,7 @@
     {
         "index": 113,
         "spellName": "!Acid Cloud",
-        "element": 4,
+        "element": 2,
         "rangeType": 3,
         "icon": 46,
         "effects": [
