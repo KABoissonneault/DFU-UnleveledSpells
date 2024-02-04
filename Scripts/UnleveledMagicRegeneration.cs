@@ -35,9 +35,19 @@ namespace UnleveledSpellsMod
 
         private void ClearState()
         {
+            // Player Object might not be available in this context. Only remove it if we have any player
+            GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+            if (playerObject != null)
+            {
+                var playerSpellCasting = playerObject.GetComponent<FPSSpellCasting>();
+                if (playerSpellCasting != null)
+                {
+                    playerSpellCasting.OnReleaseFrame -= PlayerSpellCasting_OnReleaseFrame;
+                }
+            }
+                        
             if (regenDelegate != null)
             {
-                GameManager.Instance.PlayerSpellCasting.OnReleaseFrame -= PlayerSpellCasting_OnReleaseFrame;
                 EntityEffectBroker.OnNewMagicRound -= regenDelegate;
                 regenDelegate = null;
             }
