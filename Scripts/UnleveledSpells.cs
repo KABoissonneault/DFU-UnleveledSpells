@@ -153,38 +153,43 @@ namespace UnleveledSpellsMod
                 }
             }
 
-            instance.unleveledOpenAndLock = modSettings.GetBool(Core, "UnleveledOpenAndLock");
-            if (instance.unleveledOpenAndLock)
+            bool wantsUnleveledOpenAndLock = modSettings.GetBool(Core, "UnleveledOpenAndLock");
+            if (wantsUnleveledOpenAndLock != instance.unleveledOpenAndLock)
             {
-                instance.maxMagnitudeOverride.Add(Lock.EffectKey, 20);
-                instance.maxMagnitudeOverride.Add(Open.EffectKey, 20);
-
-                GameManager.Instance.EntityEffectBroker.RegisterEffectTemplate(new UnleveledOpen(), true);
-                GameManager.Instance.EntityEffectBroker.RegisterEffectTemplate(new UnleveledLock(), true);
-
-                instance.suppressedOverrides.Add(Lock.EffectKey);
-                instance.suppressedOverrides.Add(Open.EffectKey);
-
-                if(GameManager.Instance.StateManager.GameInProgress)
+                if (wantsUnleveledOpenAndLock)
                 {
-                    AdjustOpenLockSpells();
+                    instance.maxMagnitudeOverride.Add(Lock.EffectKey, 20);
+                    instance.maxMagnitudeOverride.Add(Open.EffectKey, 20);
+
+                    GameManager.Instance.EntityEffectBroker.RegisterEffectTemplate(new UnleveledOpen(), true);
+                    GameManager.Instance.EntityEffectBroker.RegisterEffectTemplate(new UnleveledLock(), true);
+
+                    instance.suppressedOverrides.Add(Lock.EffectKey);
+                    instance.suppressedOverrides.Add(Open.EffectKey);
+
+                    if (GameManager.Instance.StateManager.GameInProgress)
+                    {
+                        AdjustOpenLockSpells();
+                    }
                 }
-            }
-            else
-            {
-                instance.maxMagnitudeOverride.Remove(Lock.EffectKey);
-                instance.maxMagnitudeOverride.Remove(Open.EffectKey);
-
-                GameManager.Instance.EntityEffectBroker.RegisterEffectTemplate(new Open(), true);
-                GameManager.Instance.EntityEffectBroker.RegisterEffectTemplate(new Lock(), true);
-
-                instance.suppressedOverrides.Remove(Lock.EffectKey);
-                instance.suppressedOverrides.Remove(Open.EffectKey);
-
-                if (GameManager.Instance.StateManager.GameInProgress)
+                else
                 {
-                    AdjustOpenLockSpells();
+                    instance.maxMagnitudeOverride.Remove(Lock.EffectKey);
+                    instance.maxMagnitudeOverride.Remove(Open.EffectKey);
+
+                    GameManager.Instance.EntityEffectBroker.RegisterEffectTemplate(new Open(), true);
+                    GameManager.Instance.EntityEffectBroker.RegisterEffectTemplate(new Lock(), true);
+
+                    instance.suppressedOverrides.Remove(Lock.EffectKey);
+                    instance.suppressedOverrides.Remove(Open.EffectKey);
+
+                    if (GameManager.Instance.StateManager.GameInProgress)
+                    {
+                        AdjustOpenLockSpells();
+                    }
                 }
+
+                instance.unleveledOpenAndLock = wantsUnleveledOpenAndLock;
             }
         }
 
