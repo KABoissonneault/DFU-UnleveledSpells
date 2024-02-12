@@ -79,9 +79,11 @@ namespace UnleveledSpellsMod
 
         public override bool TriggerExteriorOpenEffect(int buildingLockValue)
         {
+            bool success;
+
             if (castBySkeletonKey || buildingLockValue <= GetMagnitude(caster))
             {
-                return true;
+                success = true;
             }
             else
             {
@@ -93,8 +95,13 @@ namespace UnleveledSpellsMod
                 {
                     DaggerfallUI.AddHUDText(TextManager.Instance.GetLocalizedText("openFailed"), 1.5f);
                 }
-                return false;
+
+                success = false;
             }
+
+            // Cancel effect
+            CancelEffect();
+            return success;
         }
     }
 }
