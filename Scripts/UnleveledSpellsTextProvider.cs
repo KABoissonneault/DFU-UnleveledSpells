@@ -876,7 +876,7 @@ namespace UnleveledSpellsMod
                     "Lowers target's Fatigue each round.",
                     "Duration: How many rounds target takes damage.",
                     "Chance: N/A",
-                    "Magnitude: Amount of Fatigue loss to target per round."
+                    "Magnitude: How much damage target takes per round."
                     );
 
                 case 1506: return CreateTokens(TextFile.Formatting.JustifyCenter,
@@ -885,7 +885,7 @@ namespace UnleveledSpellsMod
                     "Lowers target's Spell Points each round.",
                     "Duration: How many rounds target takes damage.",
                     "Chance: N/A",
-                    "Magnitude: Amount of Spell Points target loses per round."
+                    "Magnitude: How much damage target takes per round."
                     );
 
                 case 1507: return CreateTokens(TextFile.Formatting.JustifyCenter,
@@ -948,7 +948,7 @@ namespace UnleveledSpellsMod
                     "Reduces target's Spell Points.",
                     "Duration: Instantaneous.",
                     "Chance: N/A",
-                    "Magnitude: Number of Health Points target loses."
+                    "Magnitude: Number of Spell Points target loses."
                     );
 
                 case 1515: return CreateTokens(TextFile.Formatting.JustifyCenter,
